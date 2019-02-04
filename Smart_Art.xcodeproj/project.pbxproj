@@ -14,9 +14,12 @@
 		4400BF622203914A0014C62B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4400BF602203914A0014C62B /* LaunchScreen.storyboard */; };
 		4400BF6D2203914A0014C62B /* Smart_ArtTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4400BF6C2203914A0014C62B /* Smart_ArtTests.swift */; };
 		4400BF782203914A0014C62B /* Smart_ArtUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4400BF772203914A0014C62B /* Smart_ArtUITests.swift */; };
-		CD156955220779C000BCC130 /* QuizCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD156954220779C000BCC130 /* QuizCreator.swift */; };
+		4400BF912208030F0014C62B /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4400BF902208030F0014C62B /* MockData.swift */; };
+		4400BF9322080FB50014C62B /* QuizCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4400BF9222080FB50014C62B /* QuizCell.swift */; };
+		4400BF952208142A0014C62B /* QuizLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4400BF942208142A0014C62B /* QuizLayout.swift */; };
+		4400BF982208168C0014C62B /* QuizCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4400BF972208168C0014C62B /* QuizCollectionView.swift */; };
+		4400BF9A2208191F0014C62B /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4400BF992208191F0014C62B /* QuizViewController.swift */; };
 		CD15695722077C3700BCC130 /* buttonRowStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD15695622077C3700BCC130 /* buttonRowStackView.swift */; };
-		CD15695A220781AE00BCC130 /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD156959220781AE00BCC130 /* Quiz.swift */; };
 		CDA3929322079A6700B6B641 /* fourButtonStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA3929222079A6700B6B641 /* fourButtonStackView.swift */; };
 		CDA3929522079D2000B6B641 /* QuizLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA3929422079D2000B6B641 /* QuizLabel.swift */; };
 		CDA3929722079DA500B6B641 /* AnswerButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA3929622079DA500B6B641 /* AnswerButton.swift */; };
@@ -53,9 +56,12 @@
 		4400BF732203914A0014C62B /* Smart_ArtUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Smart_ArtUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4400BF772203914A0014C62B /* Smart_ArtUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Smart_ArtUITests.swift; sourceTree = "<group>"; };
 		4400BF792203914A0014C62B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CD156954220779C000BCC130 /* QuizCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizCreator.swift; sourceTree = "<group>"; };
+		4400BF902208030F0014C62B /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
+		4400BF9222080FB50014C62B /* QuizCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizCell.swift; sourceTree = "<group>"; };
+		4400BF942208142A0014C62B /* QuizLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizLayout.swift; sourceTree = "<group>"; };
+		4400BF972208168C0014C62B /* QuizCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizCollectionView.swift; sourceTree = "<group>"; };
+		4400BF992208191F0014C62B /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		CD15695622077C3700BCC130 /* buttonRowStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buttonRowStackView.swift; sourceTree = "<group>"; };
-		CD156959220781AE00BCC130 /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
 		CDA3929222079A6700B6B641 /* fourButtonStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fourButtonStackView.swift; sourceTree = "<group>"; };
 		CDA3929422079D2000B6B641 /* QuizLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizLabel.swift; sourceTree = "<group>"; };
 		CDA3929622079DA500B6B641 /* AnswerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerButton.swift; sourceTree = "<group>"; };
@@ -109,11 +115,12 @@
 		4400BF53220391480014C62B /* Smart_Art */ = {
 			isa = PBXGroup;
 			children = (
-				CD1569582207817E00BCC130 /* quiz_model */,
-				4400BF87220393EE0014C62B /* views */,
-				4400BF86220393E50014C62B /* controllers */,
 				4400BF85220393DB0014C62B /* model */,
+				4400BF86220393E50014C62B /* controllers */,
+				4400BF87220393EE0014C62B /* views */,
 				4400BF54220391480014C62B /* AppDelegate.swift */,
+				4400BF942208142A0014C62B /* QuizLayout.swift */,
+				4400BF902208030F0014C62B /* MockData.swift */,
 				4400BF5E2203914A0014C62B /* Assets.xcassets */,
 				4400BF602203914A0014C62B /* LaunchScreen.storyboard */,
 				4400BF632203914A0014C62B /* Info.plist */,
@@ -151,7 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				4400BF56220391480014C62B /* ViewController.swift */,
-				CD156954220779C000BCC130 /* QuizCreator.swift */,
+				4400BF992208191F0014C62B /* QuizViewController.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -159,20 +166,22 @@
 		4400BF87220393EE0014C62B /* views */ = {
 			isa = PBXGroup;
 			children = (
+				4400BF96220816520014C62B /* QuizScreen */,
 				CD15695622077C3700BCC130 /* buttonRowStackView.swift */,
 				CDA3929222079A6700B6B641 /* fourButtonStackView.swift */,
-				CDA3929422079D2000B6B641 /* QuizLabel.swift */,
 				CDA3929622079DA500B6B641 /* AnswerButton.swift */,
 			);
 			name = views;
 			sourceTree = "<group>";
 		};
-		CD1569582207817E00BCC130 /* quiz_model */ = {
+		4400BF96220816520014C62B /* QuizScreen */ = {
 			isa = PBXGroup;
 			children = (
-				CD156959220781AE00BCC130 /* Quiz.swift */,
+				4400BF972208168C0014C62B /* QuizCollectionView.swift */,
+				4400BF9222080FB50014C62B /* QuizCell.swift */,
+				CDA3929422079D2000B6B641 /* QuizLabel.swift */,
 			);
-			name = quiz_model;
+			name = QuizScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -307,12 +316,15 @@
 			files = (
 				4400BF5D220391480014C62B /* Smart_Art.xcdatamodeld in Sources */,
 				CDA3929322079A6700B6B641 /* fourButtonStackView.swift in Sources */,
+				4400BF9322080FB50014C62B /* QuizCell.swift in Sources */,
+				4400BF9A2208191F0014C62B /* QuizViewController.swift in Sources */,
+				4400BF982208168C0014C62B /* QuizCollectionView.swift in Sources */,
 				4400BF57220391480014C62B /* ViewController.swift in Sources */,
 				CDA3929522079D2000B6B641 /* QuizLabel.swift in Sources */,
-				CD15695A220781AE00BCC130 /* Quiz.swift in Sources */,
+				4400BF912208030F0014C62B /* MockData.swift in Sources */,
 				CDA3929722079DA500B6B641 /* AnswerButton.swift in Sources */,
-				CD156955220779C000BCC130 /* QuizCreator.swift in Sources */,
 				4400BF55220391480014C62B /* AppDelegate.swift in Sources */,
+				4400BF952208142A0014C62B /* QuizLayout.swift in Sources */,
 				CD15695722077C3700BCC130 /* buttonRowStackView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

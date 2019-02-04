@@ -13,7 +13,7 @@ class fourButtonStackView: UIStackView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         axis = .vertical
-        spacing = 10
+        spacing = 50
         distribution = .fillEqually
         addArrangedSubview(firstButtonRow)
         addArrangedSubview(secondButtonRow)

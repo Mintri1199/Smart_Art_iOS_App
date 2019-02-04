@@ -12,14 +12,17 @@ class AnswerButton: UIButton {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        
+        layer.cornerRadius = 20
+        backgroundColor = .purple
+        titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        titleLabel?.textAlignment = .center
+        titleLabel?.minimumScaleFactor = 0.5
+        titleLabel?.textColor = .white
+        layer.borderWidth = 5
+        layer.borderColor = UIColor.white.cgColor
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    
-    
 }
