@@ -14,15 +14,20 @@ class AnswerButton: UIButton {
         super.init(frame: frame)
         layer.cornerRadius = 20
         backgroundColor = .purple
-        titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
+        titleLabel?.numberOfLines = 2
+        titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
         titleLabel?.textAlignment = .center
+        titleLabel?.adjustsFontSizeToFitWidth = true 
         titleLabel?.minimumScaleFactor = 0.5
         titleLabel?.textColor = .white
         layer.borderWidth = 5
         layer.borderColor = UIColor.white.cgColor
+        titleEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    
 }

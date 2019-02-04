@@ -21,17 +21,26 @@ class QuizCollectionView: UICollectionView, UICollectionViewDataSource{
         register(QuizCell.self, forCellWithReuseIdentifier: "QuizCell")
     }
     
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return mockQuestions.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = dequeueReusableCell(withReuseIdentifier: "QuizCell", for: indexPath) as! QuizCell
         
+        let cell = dequeueReusableCell(withReuseIdentifier: "QuizCell", for: indexPath) as! QuizCell
+        cell.quizLabel.text = mockQuestions[indexPath.row][0]
+        
+        if let quizVC = findViewController() as? ViewController {
+            quizVC.buttonStack.firstButtonRow.leftButton.setTitle(mockAnswerOptions[indexPath.row][0], for: .normal)
+            quizVC.buttonStack.firstButtonRow.rightButton.setTitle(mockAnswerOptions[indexPath.row][1], for: .normal)
+            quizVC.buttonStack.secondButtonRow.leftButton.setTitle(mockAnswerOptions[indexPath.row][2], for: .normal)
+            quizVC.buttonStack.secondButtonRow.rightButton.setTitle(mockAnswerOptions[indexPath.row][3], for: .normal)
+        }
         return cell
     }
 }

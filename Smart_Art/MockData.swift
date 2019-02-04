@@ -14,3 +14,5 @@ let firstQuestionOption = ["FLUXUS","DADAISM","FUTURISM","POST-IMPRESSIONALISM"]
 let secondQuestion = ["Who was the court sculptor of Alexander the Great?", "LYSIPPUS"]
 let secondQuestionOption = ["VIRTUVIUS", "APELLES", "PRAXITELES", "LYSIPPUS"]
 
+let mockQuestions = [firstQuestion, secondQuestion]
+let mockAnswerOptions = [firstQuestionOption, secondQuestionOption]

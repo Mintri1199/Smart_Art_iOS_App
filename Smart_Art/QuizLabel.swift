@@ -9,6 +9,7 @@
 import UIKit
 
 class QuizLabel: UILabel {
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         numberOfLines = 10

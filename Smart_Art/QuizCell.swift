@@ -13,6 +13,7 @@ class QuizCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .yellow
+
         setupImageView()
         setupLabel()
     }
@@ -53,5 +54,7 @@ class QuizCell: UICollectionViewCell {
             quizLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)
             ])
     }
+    
+    
     
 }
