@@ -14,6 +14,9 @@
 		4400BF622203914A0014C62B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4400BF602203914A0014C62B /* LaunchScreen.storyboard */; };
 		4400BF6D2203914A0014C62B /* Smart_ArtTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4400BF6C2203914A0014C62B /* Smart_ArtTests.swift */; };
 		4400BF782203914A0014C62B /* Smart_ArtUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4400BF772203914A0014C62B /* Smart_ArtUITests.swift */; };
+		4400BF892203B23D0014C62B /* QuestionVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4400BF882203B23D0014C62B /* QuestionVCViewController.swift */; };
+		4400BF8B2203B2700014C62B /* QuestionCV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4400BF8A2203B2700014C62B /* QuestionCV.swift */; };
+		4400BF8D2203B62F0014C62B /* CustomLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4400BF8C2203B62F0014C62B /* CustomLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		4400BF732203914A0014C62B /* Smart_ArtUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Smart_ArtUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4400BF772203914A0014C62B /* Smart_ArtUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Smart_ArtUITests.swift; sourceTree = "<group>"; };
 		4400BF792203914A0014C62B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4400BF882203B23D0014C62B /* QuestionVCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionVCViewController.swift; sourceTree = "<group>"; };
+		4400BF8A2203B2700014C62B /* QuestionCV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionCV.swift; sourceTree = "<group>"; };
+		4400BF8C2203B62F0014C62B /* CustomLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,9 +103,9 @@
 		4400BF53220391480014C62B /* Smart_Art */ = {
 			isa = PBXGroup;
 			children = (
-				4400BF87220393EE0014C62B /* views */,
-				4400BF86220393E50014C62B /* controllers */,
 				4400BF85220393DB0014C62B /* model */,
+				4400BF86220393E50014C62B /* controllers */,
+				4400BF87220393EE0014C62B /* views */,
 				4400BF54220391480014C62B /* AppDelegate.swift */,
 				4400BF5E2203914A0014C62B /* Assets.xcassets */,
 				4400BF602203914A0014C62B /* LaunchScreen.storyboard */,
@@ -138,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				4400BF56220391480014C62B /* ViewController.swift */,
+				4400BF882203B23D0014C62B /* QuestionVCViewController.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -145,6 +152,8 @@
 		4400BF87220393EE0014C62B /* views */ = {
 			isa = PBXGroup;
 			children = (
+				4400BF8A2203B2700014C62B /* QuestionCV.swift */,
+				4400BF8C2203B62F0014C62B /* CustomLayout.swift */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -279,7 +288,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4400BF8D2203B62F0014C62B /* CustomLayout.swift in Sources */,
+				4400BF8B2203B2700014C62B /* QuestionCV.swift in Sources */,
 				4400BF5D220391480014C62B /* Smart_Art.xcdatamodeld in Sources */,
+				4400BF892203B23D0014C62B /* QuestionVCViewController.swift in Sources */,
 				4400BF57220391480014C62B /* ViewController.swift in Sources */,
 				4400BF55220391480014C62B /* AppDelegate.swift in Sources */,
 			);

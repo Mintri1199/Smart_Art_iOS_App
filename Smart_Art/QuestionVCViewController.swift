@@ -12,19 +12,24 @@ class QuestionVCViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .blue
+        navigationController?.navigationBar.isHidden = true
+        setupCV()
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    var cv = QuestionCV(frame: .zero, collectionViewLayout: CustomLayout())
+    
+    private func setupCV() {
+        view.addSubview(cv)
+        NSLayoutConstraint.activate([
+            cv.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            cv.heightAnchor.constraint(equalToConstant: view.bounds.height/2),
+            cv.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            cv.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            ])
+        
+        
     }
-    */
 
 }

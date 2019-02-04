@@ -9,5 +9,15 @@
 import UIKit
 
 class CustomLayout: UICollectionViewFlowLayout {
-
+    override func prepare() {
+        super.prepare()
+        
+        guard let cv = collectionView else { return }
+    
+        self.itemSize = CGSize(width: cv.frame.width, height: cv.frame.height)
+        
+        self.minimumInteritemSpacing = 0
+        self.minimumLineSpacing = 0
+        self.scrollDirection = .horizontal
+    }
 }
