@@ -15,8 +15,9 @@ class QuizCollectionView: UICollectionView, UICollectionViewDataSource{
         translatesAutoresizingMaskIntoConstraints = false
         isPagingEnabled = true
         showsHorizontalScrollIndicator = false
+        isUserInteractionEnabled = false
         bounces = false
-        
+        delegate = self
         dataSource = self
         register(QuizCell.self, forCellWithReuseIdentifier: "QuizCell")
     }
@@ -35,12 +36,19 @@ class QuizCollectionView: UICollectionView, UICollectionViewDataSource{
         let cell = dequeueReusableCell(withReuseIdentifier: "QuizCell", for: indexPath) as! QuizCell
         cell.quizLabel.text = mockQuestions[indexPath.row][0]
         
+        return cell
+    }
+    
+}
+
+extension QuizCollectionView: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         if let quizVC = findViewController() as? ViewController {
             quizVC.buttonStack.firstButtonRow.leftButton.setTitle(mockAnswerOptions[indexPath.row][0], for: .normal)
             quizVC.buttonStack.firstButtonRow.rightButton.setTitle(mockAnswerOptions[indexPath.row][1], for: .normal)
             quizVC.buttonStack.secondButtonRow.leftButton.setTitle(mockAnswerOptions[indexPath.row][2], for: .normal)
             quizVC.buttonStack.secondButtonRow.rightButton.setTitle(mockAnswerOptions[indexPath.row][3], for: .normal)
         }
-        return cell
     }
 }

@@ -19,6 +19,8 @@
 		4400BF952208142A0014C62B /* QuizLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4400BF942208142A0014C62B /* QuizLayout.swift */; };
 		4400BF982208168C0014C62B /* QuizCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4400BF972208168C0014C62B /* QuizCollectionView.swift */; };
 		4400BF9A2208191F0014C62B /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4400BF992208191F0014C62B /* QuizViewController.swift */; };
+		4400BF9C220925320014C62B /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4400BF9B220925320014C62B /* UserDefaults.swift */; };
+		4400BF9E2209264C0014C62B /* questionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4400BF9D2209264C0014C62B /* questionModel.swift */; };
 		CD15695722077C3700BCC130 /* buttonRowStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD15695622077C3700BCC130 /* buttonRowStackView.swift */; };
 		CDA3929322079A6700B6B641 /* fourButtonStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA3929222079A6700B6B641 /* fourButtonStackView.swift */; };
 		CDA3929522079D2000B6B641 /* QuizLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA3929422079D2000B6B641 /* QuizLabel.swift */; };
@@ -61,6 +63,8 @@
 		4400BF942208142A0014C62B /* QuizLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizLayout.swift; sourceTree = "<group>"; };
 		4400BF972208168C0014C62B /* QuizCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizCollectionView.swift; sourceTree = "<group>"; };
 		4400BF992208191F0014C62B /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		4400BF9B220925320014C62B /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		4400BF9D2209264C0014C62B /* questionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = questionModel.swift; sourceTree = "<group>"; };
 		CD15695622077C3700BCC130 /* buttonRowStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buttonRowStackView.swift; sourceTree = "<group>"; };
 		CDA3929222079A6700B6B641 /* fourButtonStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fourButtonStackView.swift; sourceTree = "<group>"; };
 		CDA3929422079D2000B6B641 /* QuizLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizLabel.swift; sourceTree = "<group>"; };
@@ -150,6 +154,8 @@
 		4400BF85220393DB0014C62B /* model */ = {
 			isa = PBXGroup;
 			children = (
+				4400BF9B220925320014C62B /* UserDefaults.swift */,
+				4400BF9D2209264C0014C62B /* questionModel.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -318,6 +324,8 @@
 				CDA3929322079A6700B6B641 /* fourButtonStackView.swift in Sources */,
 				4400BF9322080FB50014C62B /* QuizCell.swift in Sources */,
 				4400BF9A2208191F0014C62B /* QuizViewController.swift in Sources */,
+				4400BF9C220925320014C62B /* UserDefaults.swift in Sources */,
+				4400BF9E2209264C0014C62B /* questionModel.swift in Sources */,
 				4400BF982208168C0014C62B /* QuizCollectionView.swift in Sources */,
 				4400BF57220391480014C62B /* ViewController.swift in Sources */,
 				CDA3929522079D2000B6B641 /* QuizLabel.swift in Sources */,
