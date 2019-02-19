@@ -16,7 +16,7 @@ class QuizSelectionCollectionView: UICollectionView, UICollectionViewDataSource,
         dataSource = self
         delegate = self
         translatesAutoresizingMaskIntoConstraints = false 
-        register(UICollectionViewCell.self, forCellWithReuseIdentifier: "quizCell")
+        register(QuizSelectionCell.self, forCellWithReuseIdentifier: "quizCell")
         
     }
     
@@ -29,7 +29,7 @@ class QuizSelectionCollectionView: UICollectionView, UICollectionViewDataSource,
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        var cell = dequeueReusableCell(withReuseIdentifier: "quizCell", for: indexPath)
+        let cell = dequeueReusableCell(withReuseIdentifier: "quizCell", for: indexPath) as! QuizSelectionCell
         cell.backgroundColor = .white
         return cell
     }
