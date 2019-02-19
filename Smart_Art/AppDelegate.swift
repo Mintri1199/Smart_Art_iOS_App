@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         if let window = window{
-            window.rootViewController = navigationController
+            window.rootViewController = MainTabBarController() //navigationController
             window.makeKeyAndVisible()
         }
         
