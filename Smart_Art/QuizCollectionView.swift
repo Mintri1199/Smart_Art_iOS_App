@@ -19,7 +19,7 @@ class QuizCollectionView: UICollectionView, UICollectionViewDataSource{
         bounces = false
         delegate = self
         dataSource = self
-        register(QuizCell.self, forCellWithReuseIdentifier: "QuizCell")
+        register(QuestionCell.self, forCellWithReuseIdentifier: "QuizCell")
     }
     
     
@@ -33,7 +33,7 @@ class QuizCollectionView: UICollectionView, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = dequeueReusableCell(withReuseIdentifier: "QuizCell", for: indexPath) as! QuizCell
+        let cell = dequeueReusableCell(withReuseIdentifier: "QuizCell", for: indexPath) as! QuestionCell
         cell.quizLabel.text = mockQuestions[indexPath.row][0]
         
         return cell

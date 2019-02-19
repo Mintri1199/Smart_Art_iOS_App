@@ -20,7 +20,7 @@ class QuizViewController: UIViewController {
 
     
     func setupCollectionView() {
-        let collectionView = QuizSelectionCollectionView(frame: .zero, collectionViewLayout: QuizLayout())
+        let collectionView = QuizSelectionCollectionView(frame: .zero, collectionViewLayout: SelectionLayout())
         view.addSubview(collectionView)
         
         NSLayoutConstraint.activate([

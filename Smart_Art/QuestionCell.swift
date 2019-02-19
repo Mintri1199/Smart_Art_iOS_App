@@ -8,7 +8,7 @@
 
 import UIKit
 
-class QuizCell: UICollectionViewCell {
+class QuestionCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -31,7 +31,7 @@ class QuizCell: UICollectionViewCell {
         return view
     }()
     
-    var quizLabel = QuizLabel(frame: .zero)
+    var quizLabel = QuestionLabel(frame: .zero)
     
     private func setupImageView() {
         addSubview(imageView)

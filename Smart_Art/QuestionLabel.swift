@@ -8,7 +8,7 @@
 
 import UIKit
 
-class QuizLabel: UILabel {
+class QuestionLabel: UILabel {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
