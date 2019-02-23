@@ -33,11 +33,4 @@ class QuestionLabel: UILabel {
         let insets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
         super.drawText(in: rect.inset(by: insets))
     }
-    
-    //
-//    override var intrinsicContentSize: CGSize{
-//        let size = super.intrinsicContentSize
-//
-//        return CGSize(width: size.width + 30, height: size.height + 30)
-//    }
 }

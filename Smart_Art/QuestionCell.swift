@@ -54,7 +54,4 @@ class QuestionCell: UICollectionViewCell {
             quizLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)
             ])
     }
-    
-    
-    
 }

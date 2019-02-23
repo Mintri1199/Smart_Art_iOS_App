@@ -33,5 +33,12 @@ class QuizSelectionCollectionView: UICollectionView, UICollectionViewDataSource,
         cell.backgroundColor = .white
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let questionScreen = self.findViewController() as? QuizViewController else { print("ill assign collectionView"); return }
+        questionScreen.navigationController?.pushViewController(ViewController(), animated: true)
+        
+        
+    }
 }
 

@@ -16,6 +16,7 @@ class QuizSelectionCell: UICollectionViewCell {
         layer.cornerRadius = 30
         setupImageView()
         setupQuizNameLabel()
+        setupQuizScoreLabel()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -24,9 +25,9 @@ class QuizSelectionCell: UICollectionViewCell {
     // Custom UI components for the cell
     var cellImageView = CellImageView(frame: .zero)
     var quizNameLabel = QuizNameLabel(frame: .zero)
+    var quizScoreLabel = QuizScoreLabel(frame: .zero)
     
-    
-    // Function to add constraints to custom UI components
+    // Functions to add constraints to custom UI components
     func setupImageView() {
         addSubview(cellImageView)
         NSLayoutConstraint.activate([
@@ -44,6 +45,15 @@ class QuizSelectionCell: UICollectionViewCell {
             quizNameLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
             quizNameLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
             quizNameLabel.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.2)
+            ])
+    }
+    func setupQuizScoreLabel() {
+        addSubview(quizScoreLabel)
+        NSLayoutConstraint.activate([
+            quizScoreLabel.topAnchor.constraint(equalTo: quizNameLabel.bottomAnchor),
+            quizScoreLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
+            quizScoreLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
+            quizScoreLabel.bottomAnchor.constraint(equalTo: bottomAnchor),
             ])
     }
     

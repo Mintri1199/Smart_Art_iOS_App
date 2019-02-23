@@ -18,11 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         window  = UIWindow(frame: UIScreen.main.bounds)
-        navigationController = UINavigationController(rootViewController: ViewController())
+        
         
         
         if let window = window{
-            window.rootViewController = MainTabBarController() //navigationController
+            window.rootViewController = MainTabBarController()
             window.makeKeyAndVisible()
         }
         

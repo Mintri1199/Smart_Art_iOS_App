@@ -8,6 +8,15 @@
 
 import Foundation
 
+// Question model
 struct Question: Codable {
-    
+    let imgage: URL
+    let correct: String
+    let incorrect: [String]
+}
+
+// Quiz model
+struct Quiz: Codable {
+    let categories: [String]
+    let questions: [Question]
 }

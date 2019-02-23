@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+// Round corners on most UIView
 extension UIImageView {
     public func roundCorners(_ corners: UIRectCorner, radius: CGFloat) {
         let maskPath = UIBezierPath(roundedRect: bounds,
@@ -20,3 +21,15 @@ extension UIImageView {
     }
 }
 
+extension UIView {
+    func roundCorners(corners:UIRectCorner, radius: CGFloat) {
+        let path = UIBezierPath(roundedRect: self.bounds,
+                                byRoundingCorners: corners,
+                                cornerRadii: CGSize(width: radius, height: radius))
+        let mask = CAShapeLayer()
+        let rect = self.bounds
+        mask.frame = rect
+        mask.path = path.cgPath
+        self.layer.mask = mask
+    }
+}
