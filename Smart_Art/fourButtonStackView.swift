@@ -18,10 +18,10 @@ class fourButtonStackView: UIStackView {
         addArrangedSubview(firstButtonRow)
         addArrangedSubview(secondButtonRow)
         translatesAutoresizingMaskIntoConstraints = false
-        firstButtonRow.leftButton.addTarget(self, action: #selector(answerButtonTapped(_:)), for: .touchUpInside)
-        firstButtonRow.rightButton.addTarget(self, action: #selector(answerButtonTapped(_:)), for: .touchUpInside)
-        secondButtonRow.leftButton.addTarget(self, action: #selector(answerButtonTapped(_:)), for: .touchUpInside)
-        secondButtonRow.rightButton.addTarget(self, action: #selector(answerButtonTapped(_:)), for: .touchUpInside)
+        firstButtonRow.leftButton.addTarget(self, action: #selector(answerButtonPressRevised(_:)), for: .touchUpInside)
+        firstButtonRow.rightButton.addTarget(self, action: #selector(answerButtonPressRevised(_:)), for: .touchUpInside)
+        secondButtonRow.leftButton.addTarget(self, action: #selector(answerButtonPressRevised(_:)), for: .touchUpInside)
+        secondButtonRow.rightButton.addTarget(self, action: #selector(answerButtonPressRevised(_:)), for: .touchUpInside)
     }
     
     required init(coder: NSCoder) {
@@ -31,26 +31,29 @@ class fourButtonStackView: UIStackView {
     var firstButtonRow = buttonRowStackView()
     var secondButtonRow = buttonRowStackView()
     
-    // Holy shit find a better way to do this
-    @objc func answerButtonTapped(_ sender: AnswerButton) {
+    @objc func answerButtonPressRevised(_ sender: AnswerButton) {
         var endOfQuiz = false
         
-        if let quizVC = findViewController() as? ViewController {
-            // Get the index of current question cell
-            let index = quizVC.cv.indexPathsForVisibleItems
+        if let questionVC = findViewController() as? QuestionViewController {
+            // Get the index of hte current question cell
+            let index = questionVC.cv.indexPathsForVisibleItems
             // Get the index of next
             guard let nextItemIndex = index.first.map({IndexPath(item: $0.row + 1, section: $0.section)}) else { return }
             // Creating a dictionary to pass it into the timer selector
-            let nextIndex = ["index" : nextItemIndex]
-            // Check if the cell is the last cell in the collectionView
-            if nextItemIndex[1] == mockQuestions.count{
+            let nextIndex = ["index": nextItemIndex]
+            // Check if the cell is the last cell int he collectionView
+            if nextItemIndex[1] == mockQuiz.questions.count {
                 endOfQuiz = true
             }
-            let answer = mockQuestions[index[0][1]][1]     // Holy shit what the fuck, Change this once the question model has been created
-            if sender.titleLabel?.text == answer{
+            
+            // Get the current question 
+            let currentQuestion = mockQuiz.questions[index[0][1]]
+            let answer = currentQuestion.correct
+            
+            if sender.titleLabel?.text == answer {
                 sender.backgroundColor = .green
-                quizVC.score += 1
-                quizVC.scoreLabel.text = "Score: \(quizVC.score)"
+                questionVC.score += 1
+                questionVC.scoreLabel.text = "Score: \(questionVC.score)"
                 buttonsDisable()
                 if endOfQuiz{
                     print("End of quiz")
@@ -58,7 +61,7 @@ class fourButtonStackView: UIStackView {
                     print("Correct Answer pressed")
                     Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(delayTransition(timer:)), userInfo: nextIndex, repeats: false)
                 }
-            }else{
+            } else {
                 sender.backgroundColor = .red
                 buttonsDisable()
                 if endOfQuiz{
@@ -79,7 +82,7 @@ class fourButtonStackView: UIStackView {
         // Then access the element you want
         let index = context["index", default: IndexPath(row: 0, section: 0)]
         
-        if let quizVC = findViewController() as? ViewController {
+        if let quizVC = findViewController() as? QuestionViewController  {
             quizVC.cv.scrollToItem(at: index, at: .left, animated: true)
             reEnableButton()
         }

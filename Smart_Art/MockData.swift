@@ -8,11 +8,8 @@
 
 import Foundation
 
-let firstQuestion = ["What art movement was Yoko Ono associated with during the 1960s?", "FLUXUS"]
-let firstQuestionOption = ["FLUXUS","DADAISM","FUTURISM","POST-IMPRESSIONALISM"]
+let firstQuestion = Question.init(image: "None", question: "What art movement was Yoko Ono associated with during the 1960s?", correct: "FLUXUS", incorrect: ["DADAISM","FUTURISM","POST-IMPRESSIONALISM"])
 
-let secondQuestion = ["Who was the court sculptor of Alexander the Great?", "LYSIPPUS"]
-let secondQuestionOption = ["VIRTUVIUS", "APELLES", "PRAXITELES", "LYSIPPUS"]
+let secondQuestion = Question.init(image: "None", question: "Who was the court sculptor of Alexander the Great?", correct: "LYSIPPUS", incorrect: ["VIRTUVIUS", "APELLES", "PRAXITELES"])
 
-let mockQuestions = [firstQuestion, secondQuestion]
-let mockAnswerOptions = [firstQuestionOption, secondQuestionOption]
+let mockQuiz = Quiz.init(categories: ["Mock"], questions: [firstQuestion, secondQuestion])

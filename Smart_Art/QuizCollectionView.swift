@@ -28,13 +28,14 @@ class QuizCollectionView: UICollectionView, UICollectionViewDataSource{
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return mockQuestions.count
+        return mockQuiz.questions.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let question = mockQuiz.questions[indexPath.row]
         
         let cell = dequeueReusableCell(withReuseIdentifier: "QuizCell", for: indexPath) as! QuestionCell
-        cell.quizLabel.text = mockQuestions[indexPath.row][0]
+        cell.quizLabel.text = question.question
         
         return cell
     }
@@ -44,11 +45,17 @@ class QuizCollectionView: UICollectionView, UICollectionViewDataSource{
 extension QuizCollectionView: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if let quizVC = findViewController() as? ViewController {
-            quizVC.buttonStack.firstButtonRow.leftButton.setTitle(mockAnswerOptions[indexPath.row][0], for: .normal)
-            quizVC.buttonStack.firstButtonRow.rightButton.setTitle(mockAnswerOptions[indexPath.row][1], for: .normal)
-            quizVC.buttonStack.secondButtonRow.leftButton.setTitle(mockAnswerOptions[indexPath.row][2], for: .normal)
-            quizVC.buttonStack.secondButtonRow.rightButton.setTitle(mockAnswerOptions[indexPath.row][3], for: .normal)
+        let currentQuestion = mockQuiz.questions[indexPath.row]
+        var currentOptions = currentQuestion.incorrect
+        currentOptions.append(currentQuestion.correct)
+        
+        currentOptions.shuffle()
+        
+        if let quizVC = findViewController() as? QuestionViewController {
+            quizVC.buttonStack.firstButtonRow.leftButton.setTitle(currentOptions[0], for: .normal)
+            quizVC.buttonStack.firstButtonRow.rightButton.setTitle(currentOptions[1], for: .normal)
+            quizVC.buttonStack.secondButtonRow.leftButton.setTitle(currentOptions[2], for: .normal)
+            quizVC.buttonStack.secondButtonRow.rightButton.setTitle(currentOptions[3], for: .normal)
         }
     }
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class QuestionViewController: UIViewController {
     var score = 0
     
     override func viewDidLoad() {

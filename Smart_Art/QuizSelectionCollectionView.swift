@@ -36,9 +36,7 @@ class QuizSelectionCollectionView: UICollectionView, UICollectionViewDataSource,
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let questionScreen = self.findViewController() as? QuizViewController else { print("ill assign collectionView"); return }
-        questionScreen.navigationController?.pushViewController(ViewController(), animated: true)
-        
-        
+        questionScreen.navigationController?.pushViewController(QuestionViewController(), animated: true)
     }
 }
 
