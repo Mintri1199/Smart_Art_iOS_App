@@ -36,9 +36,9 @@ class fourButtonStackView: UIStackView {
         
         if let questionVC = findViewController() as? QuestionViewController {
             // Get the index of hte current question cell
-            let index = questionVC.cv.indexPathsForVisibleItems
+            let cellIndex = questionVC.cv.indexPathsForVisibleItems
             // Get the index of next
-            guard let nextItemIndex = index.first.map({IndexPath(item: $0.row + 1, section: $0.section)}) else { return }
+            guard let nextItemIndex = cellIndex.first.map({IndexPath(item: $0.row + 1, section: $0.section)}) else { return }
             // Creating a dictionary to pass it into the timer selector
             let nextIndex = ["index": nextItemIndex]
             // Check if the cell is the last cell int he collectionView
@@ -46,8 +46,8 @@ class fourButtonStackView: UIStackView {
                 endOfQuiz = true
             }
             
-            // Get the current question 
-            let currentQuestion = mockQuiz.questions[index[0][1]]
+            // Get the current question accordance to the cell's index
+            let currentQuestion = mockQuiz.questions[cellIndex[0][1]]
             let answer = currentQuestion.correct
             
             if sender.titleLabel?.text == answer {
@@ -88,7 +88,7 @@ class fourButtonStackView: UIStackView {
         }
     }
     
-    // Disable all once one is pressed
+    // Disable all buttons once one is pressed
     func buttonsDisable() {
         firstButtonRow.leftButton.isEnabled = false
         firstButtonRow.rightButton.isEnabled = false
