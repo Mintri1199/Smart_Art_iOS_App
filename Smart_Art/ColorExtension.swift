@@ -10,6 +10,10 @@ import Foundation
 import UIKit
 
 extension UIColor {
-    static var homeScreenColor = UIColor(red: 35/255, green: 49/255, blue: 66/255, alpha: 1)
-    static var quizScreenColor = UIColor(red: 79/255, green: 157/255, blue: 166/255, alpha: 1)
+    
+    static var mainBackgroundColor = UIColor(red:0.21, green:0.28, blue:0.49, alpha:1.0)
+    static var tabBarColor = UIColor(red:0.77, green:0.93, blue:0.87, alpha:1.0)
+    static var toolBarColor = UIColor(red:0.96, green:0.45, blue:0.50, alpha:1.0)
+    static var quizLabelColor = UIColor(red:0.42, green:0.36, blue:0.48, alpha:1.0)
+    
 }

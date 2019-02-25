@@ -12,7 +12,6 @@ class QuizSelectionCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         layer.cornerRadius = 30
         setupImageView()
         setupQuizNameLabel()

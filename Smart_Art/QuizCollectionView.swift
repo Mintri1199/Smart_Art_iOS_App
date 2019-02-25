@@ -39,7 +39,7 @@ class QuizCollectionView: UICollectionView, UICollectionViewDataSource{
         getImage(urlString: question.image) { (image) in
             if let image = image {
                 DispatchQueue.main.async {
-                    cell.imageView.image = image
+                    cell.updateCell(with: image)
                 }
             }
         }

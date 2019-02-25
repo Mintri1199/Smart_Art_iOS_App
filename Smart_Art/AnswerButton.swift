@@ -13,15 +13,13 @@ class AnswerButton: UIButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
         layer.cornerRadius = 20
-        backgroundColor = .purple
+        backgroundColor = .toolBarColor
         titleLabel?.numberOfLines = 2
         titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
         titleLabel?.textAlignment = .center
         titleLabel?.adjustsFontSizeToFitWidth = true 
         titleLabel?.minimumScaleFactor = 0.5
         titleLabel?.textColor = .white
-        layer.borderWidth = 5
-        layer.borderColor = UIColor.white.cgColor
         titleEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
     }
     
@@ -29,5 +27,13 @@ class AnswerButton: UIButton {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func rightAnswer() {
+        UIView.animate(withDuration: 0.2, delay: 0, options: .curveLinear, animations: {
+            self.backgroundColor = UIColor.green
+            self.titleLabel?.textColor = .white
+        }) { (bool) in
+            self.layer.removeAllAnimations()
+        }
+    }
     
 }

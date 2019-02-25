@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class fourButtonStackView: UIStackView {
     
     override init(frame: CGRect) {
@@ -51,7 +52,8 @@ class fourButtonStackView: UIStackView {
             let answer = currentQuestion.correct
             
             if sender.titleLabel?.text == answer {
-                sender.backgroundColor = .green
+                sender.rightAnswer()
+                //sender.rotate360Degrees()
                 questionVC.score += 1
                 questionVC.scoreLabel.text = "Score: \(questionVC.score)"
                 buttonsDisable()
@@ -63,6 +65,7 @@ class fourButtonStackView: UIStackView {
                 }
             } else {
                 sender.backgroundColor = .red
+                sender.shake()
                 buttonsDisable()
                 if endOfQuiz{
                     print("End of quiz")
@@ -102,9 +105,9 @@ class fourButtonStackView: UIStackView {
         firstButtonRow.rightButton.isEnabled = true
         secondButtonRow.leftButton.isEnabled = true
         secondButtonRow.rightButton.isEnabled = true
-        firstButtonRow.leftButton.backgroundColor = .purple
-        firstButtonRow.rightButton.backgroundColor = .purple
-        secondButtonRow.leftButton.backgroundColor = .purple
-        secondButtonRow.rightButton.backgroundColor = .purple
+        firstButtonRow.leftButton.backgroundColor = .toolBarColor
+        firstButtonRow.rightButton.backgroundColor = .toolBarColor
+        secondButtonRow.leftButton.backgroundColor = .toolBarColor
+        secondButtonRow.rightButton.backgroundColor = .toolBarColor
     }
 }

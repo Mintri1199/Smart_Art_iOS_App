@@ -29,6 +29,9 @@
 		44201759221B9B0700B45F56 /* QuizNameLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44201758221B9B0700B45F56 /* QuizNameLabel.swift */; };
 		4420175B221B9FDC00B45F56 /* QuizScoreLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4420175A221B9FDC00B45F56 /* QuizScoreLabel.swift */; };
 		44D9BF0122221C21007969C5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D9BF0022221C21007969C5 /* NetworkManager.swift */; };
+		5896C15A5EA66A9675E4D255 /* Pods_Smart_ArtTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 414065CA46D590B14CE78178 /* Pods_Smart_ArtTests.framework */; };
+		6F04E173AF6B2CBF384691BA /* Pods_Smart_Art.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1CA45F83DDB45E1DE6DC9F5 /* Pods_Smart_Art.framework */; };
+		B5DD14ADF28E96BA8173DBBD /* Pods_Smart_ArtUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78288B089F1F90A1147751E5 /* Pods_Smart_ArtUITests.framework */; };
 		CD15695722077C3700BCC130 /* buttonRowStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD15695622077C3700BCC130 /* buttonRowStackView.swift */; };
 		CDA3929322079A6700B6B641 /* fourButtonStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA3929222079A6700B6B641 /* fourButtonStackView.swift */; };
 		CDA3929522079D2000B6B641 /* QuestionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA3929422079D2000B6B641 /* QuestionLabel.swift */; };
@@ -53,6 +56,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E3297B2E531E3CE6966655E /* Pods-Smart_Art.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart_Art.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smart_Art/Pods-Smart_Art.debug.xcconfig"; sourceTree = "<group>"; };
+		24FCB749FA857EF60F1CF432 /* Pods-Smart_ArtUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart_ArtUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smart_ArtUITests/Pods-Smart_ArtUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		414065CA46D590B14CE78178 /* Pods_Smart_ArtTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smart_ArtTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4400BF51220391480014C62B /* Smart_Art.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Smart_Art.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4400BF54220391480014C62B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4400BF56220391480014C62B /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
@@ -79,10 +85,16 @@
 		44201758221B9B0700B45F56 /* QuizNameLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizNameLabel.swift; sourceTree = "<group>"; };
 		4420175A221B9FDC00B45F56 /* QuizScoreLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizScoreLabel.swift; sourceTree = "<group>"; };
 		44D9BF0022221C21007969C5 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		78288B089F1F90A1147751E5 /* Pods_Smart_ArtUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smart_ArtUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		92043F095649075AFDB22B54 /* Pods-Smart_ArtTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart_ArtTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Smart_ArtTests/Pods-Smart_ArtTests.release.xcconfig"; sourceTree = "<group>"; };
+		A1CA45F83DDB45E1DE6DC9F5 /* Pods_Smart_Art.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smart_Art.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFDB22CC1FC38E728EAA39DF /* Pods-Smart_ArtTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart_ArtTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Smart_ArtTests/Pods-Smart_ArtTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CD15695622077C3700BCC130 /* buttonRowStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = buttonRowStackView.swift; sourceTree = "<group>"; };
 		CDA3929222079A6700B6B641 /* fourButtonStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fourButtonStackView.swift; sourceTree = "<group>"; };
 		CDA3929422079D2000B6B641 /* QuestionLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionLabel.swift; sourceTree = "<group>"; };
 		CDA3929622079DA500B6B641 /* AnswerButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerButton.swift; sourceTree = "<group>"; };
+		E37DF029F6B6B2969DAC82CD /* Pods-Smart_Art.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart_Art.release.xcconfig"; path = "Pods/Target Support Files/Pods-Smart_Art/Pods-Smart_Art.release.xcconfig"; sourceTree = "<group>"; };
+		FD5F56E12834626E09E9F0FF /* Pods-Smart_ArtUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart_ArtUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Smart_ArtUITests/Pods-Smart_ArtUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F04E173AF6B2CBF384691BA /* Pods_Smart_Art.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5896C15A5EA66A9675E4D255 /* Pods_Smart_ArtTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5DD14ADF28E96BA8173DBBD /* Pods_Smart_ArtUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +130,8 @@
 			children = (
 				4400BF53220391480014C62B /* Smart_Art */,
 				4400BF52220391480014C62B /* Products */,
+				AE4493D3692A1676C19EEEE3 /* Pods */,
+				9038BC54D36A929BA1202E42 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -210,6 +227,29 @@
 			name = SelectionScreen;
 			sourceTree = "<group>";
 		};
+		9038BC54D36A929BA1202E42 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A1CA45F83DDB45E1DE6DC9F5 /* Pods_Smart_Art.framework */,
+				414065CA46D590B14CE78178 /* Pods_Smart_ArtTests.framework */,
+				78288B089F1F90A1147751E5 /* Pods_Smart_ArtUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AE4493D3692A1676C19EEEE3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0E3297B2E531E3CE6966655E /* Pods-Smart_Art.debug.xcconfig */,
+				E37DF029F6B6B2969DAC82CD /* Pods-Smart_Art.release.xcconfig */,
+				BFDB22CC1FC38E728EAA39DF /* Pods-Smart_ArtTests.debug.xcconfig */,
+				92043F095649075AFDB22B54 /* Pods-Smart_ArtTests.release.xcconfig */,
+				24FCB749FA857EF60F1CF432 /* Pods-Smart_ArtUITests.debug.xcconfig */,
+				FD5F56E12834626E09E9F0FF /* Pods-Smart_ArtUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -217,9 +257,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4400BF7C2203914A0014C62B /* Build configuration list for PBXNativeTarget "Smart_Art" */;
 			buildPhases = (
+				EA46E7A186CB1B8977C74F79 /* [CP] Check Pods Manifest.lock */,
 				4400BF4D220391480014C62B /* Sources */,
 				4400BF4E220391480014C62B /* Frameworks */,
 				4400BF4F220391480014C62B /* Resources */,
+				8CC9264118FF3247F97D1DD6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -234,6 +276,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4400BF7F2203914A0014C62B /* Build configuration list for PBXNativeTarget "Smart_ArtTests" */;
 			buildPhases = (
+				4E1BB6E17BF803E0F590E4EF /* [CP] Check Pods Manifest.lock */,
 				4400BF642203914A0014C62B /* Sources */,
 				4400BF652203914A0014C62B /* Frameworks */,
 				4400BF662203914A0014C62B /* Resources */,
@@ -252,6 +295,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4400BF822203914A0014C62B /* Build configuration list for PBXNativeTarget "Smart_ArtUITests" */;
 			buildPhases = (
+				D6379A28D2CA18BA6507BE54 /* [CP] Check Pods Manifest.lock */,
 				4400BF6F2203914A0014C62B /* Sources */,
 				4400BF702203914A0014C62B /* Frameworks */,
 				4400BF712203914A0014C62B /* Resources */,
@@ -334,6 +378,97 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4E1BB6E17BF803E0F590E4EF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Smart_ArtTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8CC9264118FF3247F97D1DD6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Smart_Art/Pods-Smart_Art-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Smart_Art/Pods-Smart_Art-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D6379A28D2CA18BA6507BE54 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Smart_ArtUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA46E7A186CB1B8977C74F79 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Smart_Art-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4400BF4D220391480014C62B /* Sources */ = {
@@ -526,6 +661,7 @@
 		};
 		4400BF7D2203914A0014C62B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E3297B2E531E3CE6966655E /* Pods-Smart_Art.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -544,6 +680,7 @@
 		};
 		4400BF7E2203914A0014C62B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E37DF029F6B6B2969DAC82CD /* Pods-Smart_Art.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -562,6 +699,7 @@
 		};
 		4400BF802203914A0014C62B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BFDB22CC1FC38E728EAA39DF /* Pods-Smart_ArtTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -583,6 +721,7 @@
 		};
 		4400BF812203914A0014C62B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92043F095649075AFDB22B54 /* Pods-Smart_ArtTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -604,6 +743,7 @@
 		};
 		4400BF832203914A0014C62B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 24FCB749FA857EF60F1CF432 /* Pods-Smart_ArtUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -624,6 +764,7 @@
 		};
 		4400BF842203914A0014C62B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD5F56E12834626E09E9F0FF /* Pods-Smart_ArtUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

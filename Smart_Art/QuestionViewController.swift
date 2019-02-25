@@ -14,7 +14,7 @@ class QuestionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBarController?.tabBar.isHidden = true
-        view.backgroundColor = .purple
+        view.backgroundColor = .mainBackgroundColor
         setupScoreLabel()
         setupButtonStack()
         setupCollectionView()
@@ -22,6 +22,7 @@ class QuestionViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
         scoreLabel.text = "Score: \(score)"
     }
     
@@ -44,7 +45,7 @@ class QuestionViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             cv.topAnchor.constraint(equalTo: scoreLabel.bottomAnchor),
-            cv.bottomAnchor.constraint(equalTo: buttonStack.topAnchor, constant: -30),
+            cv.bottomAnchor.constraint(equalTo: buttonStack.topAnchor),
             cv.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             cv.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             ])

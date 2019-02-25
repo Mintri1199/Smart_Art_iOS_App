@@ -19,7 +19,7 @@ class SelectionLayout: UICollectionViewFlowLayout {
         let maxNumColumn = Int(availableWidth/minimumCellWidth)
         let cellWidth = (availableWidth / CGFloat(maxNumColumn)).rounded(.up)
         self.itemSize = CGSize(width: cellWidth - 20, height: cv.bounds.height/3.5)
-        self.sectionInset = UIEdgeInsets(top: 15, left: 10, bottom: 15, right: 10)
+        self.sectionInset = UIEdgeInsets(top: 15, left: 15, bottom: 15, right: 15)
         self.sectionInsetReference = .fromSafeArea
     }
 }

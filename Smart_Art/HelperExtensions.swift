@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-// Round corners on most UIView
+// Round corners on UIImageView
 extension UIImageView {
     public func roundCorners(_ corners: UIRectCorner, radius: CGFloat) {
         let maskPath = UIBezierPath(roundedRect: bounds,
@@ -21,6 +21,7 @@ extension UIImageView {
     }
 }
 
+// Round corners on most UIView
 extension UIView {
     func roundCorners(corners:UIRectCorner, radius: CGFloat) {
         let path = UIBezierPath(roundedRect: self.bounds,
@@ -32,4 +33,24 @@ extension UIView {
         mask.path = path.cgPath
         self.layer.mask = mask
     }
+}
+
+// Animations for UIView
+extension UIView {
+    
+    func shake() {
+        let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
+        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
+        animation.duration = 0.6
+        animation.values = [-10.0, 10.0, -10.0, 10.0, -5.0, 5.0, -5.0, 5.0, 0.0 ]
+        layer.add(animation, forKey: "shake")
+    }
+    
+//    func rotate360Degrees() {
+//        let rotateAnimation = CABasicAnimation(keyPath: "transform.rotation")
+//        rotateAnimation.fromValue = 0.0
+//        rotateAnimation.toValue = CGFloat.pi
+//        rotateAnimation.duration = 0.2
+//        layer.add(rotateAnimation, forKey: nil)
+//    }
 }

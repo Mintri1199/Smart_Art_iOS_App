@@ -13,13 +13,14 @@ class QuizViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .quizScreenColor
+        view.backgroundColor = .mainBackgroundColor
         setupCollectionView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.tabBarController?.tabBar.isHidden = false
+        self.navigationController?.navigationBar.barTintColor = .toolBarColor
+        //self.tabBarController?.tabBar.isHidden = false
     }
 
     

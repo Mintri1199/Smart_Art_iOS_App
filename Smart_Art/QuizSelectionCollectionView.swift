@@ -12,7 +12,7 @@ class QuizSelectionCollectionView: UICollectionView, UICollectionViewDataSource,
     
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
-        backgroundColor = .red
+        backgroundColor = .mainBackgroundColor
         dataSource = self
         delegate = self
         translatesAutoresizingMaskIntoConstraints = false 
@@ -30,6 +30,12 @@ class QuizSelectionCollectionView: UICollectionView, UICollectionViewDataSource,
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = dequeueReusableCell(withReuseIdentifier: "quizCell", for: indexPath) as! QuizSelectionCell
+        cell.layer.shadowColor = UIColor.black.cgColor
+        cell.layer.shadowOffset = CGSize(width:0,height: 2.0)
+        cell.layer.shadowRadius = 2.0
+        cell.layer.shadowOpacity = 1.0
+        cell.layer.masksToBounds = false
+        cell.layer.shadowPath = UIBezierPath(roundedRect:cell.bounds, cornerRadius:cell.layer.cornerRadius).cgPath
         cell.backgroundColor = .white
         return cell
     }
