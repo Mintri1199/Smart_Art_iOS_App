@@ -8,17 +8,18 @@
 
 import UIKit
 
+// Custom UILabel for score in selection screen
 class QuizScoreLabel: UILabel {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
         numberOfLines = 3
         backgroundColor = .yellow
-        text = "Score: 0"
+        text = "Score: 01293243"
         font = UIFont.systemFont(ofSize: 30)
         textAlignment = .center
-        adjustsFontSizeToFitWidth = true
-        minimumScaleFactor = 0.5
+        adjustsFontSizeToFitWidth = true  // Must the size to fit all the text
+        minimumScaleFactor = 0.5          // Can not get small then the given percentage of the original text size
         translatesAutoresizingMaskIntoConstraints = false
     }
     

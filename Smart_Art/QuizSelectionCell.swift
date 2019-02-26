@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Custom cell for collectionView in selection screen
 class QuizSelectionCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
@@ -21,6 +22,7 @@ class QuizSelectionCell: UICollectionViewCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     // Custom UI components for the cell
     var cellImageView = CellImageView(frame: .zero)
     var quizNameLabel = QuizNameLabel(frame: .zero)

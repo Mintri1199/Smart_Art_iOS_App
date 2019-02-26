@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+// Custom button for Custom stack view
 class AnswerButton: UIButton {
 
     override init(frame: CGRect) {

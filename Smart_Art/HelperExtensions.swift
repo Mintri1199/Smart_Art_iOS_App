@@ -54,3 +54,16 @@ extension UIView {
         layer.add(rotateAnimation, forKey: nil)
     }
 }
+
+// Find the viewcontroller of a component is in
+extension UIView {
+    func findViewController() -> UIViewController? {
+        if let nextResponder = self.next as? UIViewController {
+            return nextResponder
+        } else if let nextResponder = self.next as? UIView {
+            return nextResponder.findViewController()
+        } else {
+            return nil
+        }
+    }
+}

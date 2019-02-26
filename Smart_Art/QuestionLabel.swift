@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Custom label for question (not in use currently)
 class QuestionLabel: UILabel {
     
     override init(frame: CGRect) {

@@ -34,7 +34,6 @@ class QuestionCell: UICollectionViewCell {
         var view = UIImageView(frame: .zero)
         view.contentMode = .scaleAspectFit
         view.translatesAutoresizingMaskIntoConstraints = false
-        
         return view
     }()
     

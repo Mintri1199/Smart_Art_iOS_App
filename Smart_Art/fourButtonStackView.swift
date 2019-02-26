@@ -8,18 +8,18 @@
 
 import UIKit
 
-
+// Outer stackView of the four buttons
 class fourButtonStackView: UIStackView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         axis = .vertical
         spacing = 50
-        backgroundColor = .green
         distribution = .fillEqually
         addArrangedSubview(firstButtonRow)
         addArrangedSubview(secondButtonRow)
         translatesAutoresizingMaskIntoConstraints = false
+        // Setting action for the buttons
         firstButtonRow.leftButton.addTarget(self, action: #selector(answerButtonPressRevised(_:)), for: .touchUpInside)
         firstButtonRow.rightButton.addTarget(self, action: #selector(answerButtonPressRevised(_:)), for: .touchUpInside)
         secondButtonRow.leftButton.addTarget(self, action: #selector(answerButtonPressRevised(_:)), for: .touchUpInside)
@@ -42,13 +42,13 @@ class fourButtonStackView: UIStackView {
         var endOfQuiz = false
         
         if let questionVC = findViewController() as? QuestionViewController {
-            // Get the index of hte current question cell
+            // Get the index of the current question cell
             let cellIndex = questionVC.cv.indexPathsForVisibleItems
             // Get the index of next
             guard let nextItemIndex = cellIndex.first.map({IndexPath(item: $0.row + 1, section: $0.section)}) else { return }
             // Creating a dictionary to pass it into the timer selector
             let nextIndex = ["index": nextItemIndex]
-            // Check if the cell is the last cell int he collectionView
+            // Check if the cell is the last cell in the collectionView
             if nextItemIndex[1] == mockQuiz.questions.count {
                 endOfQuiz = true
             }
@@ -65,7 +65,7 @@ class fourButtonStackView: UIStackView {
                 buttonsDisable()
                 if endOfQuiz{
                     print("End of quiz")
-                } else{
+                } else {
                     print("Correct Answer pressed")
                     Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(delayTransition(timer:)), userInfo: nextIndex, repeats: false)
                 }

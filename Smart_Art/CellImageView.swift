@@ -7,9 +7,8 @@
 //
 
 import UIKit
-
+// Custom ImageView for selection screen
 class CellImageView: UIImageView {
-    var radius = 30
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -25,6 +24,6 @@ class CellImageView: UIImageView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.roundCorners([.topRight, .topLeft], radius: CGFloat(radius))
+        self.roundCorners([.topRight, .topLeft], radius: 30)
     }
 }

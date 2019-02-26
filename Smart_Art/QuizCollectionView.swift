@@ -16,6 +16,7 @@ class QuizCollectionView: UICollectionView, UICollectionViewDataSource{
         isPagingEnabled = true
         showsHorizontalScrollIndicator = false
         isUserInteractionEnabled = false
+        backgroundColor = .mainBackgroundColor
         bounces = false
         delegate = self
         dataSource = self

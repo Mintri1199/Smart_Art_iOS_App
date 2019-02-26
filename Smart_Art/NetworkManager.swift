@@ -9,12 +9,15 @@
 import Foundation
 import UIKit
 
+// This function allow us to get an image using a url string for the individual question
 func getImage(urlString: String, completion: @escaping (UIImage?) -> ()) {
+    // Turn string parameter into url
     let imageUrl = URL(string: urlString)
+    // configure urlSession
     let session = URLSession(configuration: .default)
-    
+    // configure urlRequest
     let request = URLRequest(url: imageUrl!)
-    
+
     let task = session.dataTask(with: request) { (data, response, error) in
         guard let data = data, error == nil else { return }
         

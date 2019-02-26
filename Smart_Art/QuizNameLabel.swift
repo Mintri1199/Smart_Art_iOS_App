@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+// Custom Label for quiz name in the selection screen
 class QuizNameLabel: UILabel {
 
     override init(frame: CGRect) {
@@ -17,8 +17,8 @@ class QuizNameLabel: UILabel {
         text = "QUIZ NAME HERE"
         font = UIFont.systemFont(ofSize: 30)
         textAlignment = .center
-        adjustsFontSizeToFitWidth = true
-        minimumScaleFactor = 0.5
+        adjustsFontSizeToFitWidth = true    // Must the size to fit all the text
+        minimumScaleFactor = 0.5            // Can not get small then the given percentage of the original text size
         translatesAutoresizingMaskIntoConstraints = false
     }
     

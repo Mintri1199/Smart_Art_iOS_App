@@ -53,9 +53,11 @@ class QuestionViewController: UIViewController {
     
     var scoreLabel: UILabel = {
         var label = UILabel(frame: .zero)
-        label.textAlignment = .center
+        label.textAlignment = .left
+        label.textColor = .white
+        label.font = UIFont.boldSystemFont(ofSize: 25)
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.backgroundColor = .red
+        label.backgroundColor = .mainBackgroundColor
         return label
     }()
     
@@ -64,21 +66,13 @@ class QuestionViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             scoreLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            scoreLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
+            scoreLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 15),
             scoreLabel.heightAnchor.constraint(equalToConstant: view.bounds.height/15),
-            scoreLabel.widthAnchor.constraint(equalToConstant: view.bounds.width/4)
+            scoreLabel.widthAnchor.constraint(equalToConstant: view.bounds.width/2)
             ])
     }
+    
+    
 }
 
-extension UIView {
-    func findViewController() -> UIViewController? {
-        if let nextResponder = self.next as? UIViewController {
-            return nextResponder
-        } else if let nextResponder = self.next as? UIView {
-            return nextResponder.findViewController()
-        } else {
-            return nil
-        }
-    }
-}
+

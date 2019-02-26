@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Csustom horizontal stack of buttons
 class buttonRowStackView: UIStackView {
     override init(frame: CGRect) {
         super.init(frame: frame)

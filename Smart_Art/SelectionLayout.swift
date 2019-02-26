@@ -8,6 +8,7 @@
 
 import UIKit
 
+// Custom layout rules for collectionView in selection screen
 class SelectionLayout: UICollectionViewFlowLayout {
     override func prepare() {
         guard let cv = collectionView else { return }
