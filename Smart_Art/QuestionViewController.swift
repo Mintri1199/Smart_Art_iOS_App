@@ -45,7 +45,7 @@ class QuestionViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             cv.topAnchor.constraint(equalTo: scoreLabel.bottomAnchor),
-            cv.bottomAnchor.constraint(equalTo: buttonStack.topAnchor),
+            cv.bottomAnchor.constraint(equalTo: buttonStack.topAnchor, constant: -30),
             cv.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             cv.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             ])

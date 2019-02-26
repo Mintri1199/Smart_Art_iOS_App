@@ -22,7 +22,7 @@ class QuestionCell: UICollectionViewCell {
             AI.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.6)
             ])
         setupImageView()
-        setupLabel()
+        //setupLabel()
     }
     
     
@@ -32,7 +32,6 @@ class QuestionCell: UICollectionViewCell {
     
     var imageView: UIImageView = {
         var view = UIImageView(frame: .zero)
-        view.image = nil
         view.contentMode = .scaleAspectFit
         view.translatesAutoresizingMaskIntoConstraints = false
         
@@ -48,10 +47,11 @@ class QuestionCell: UICollectionViewCell {
             imageView.topAnchor.constraint(equalTo: topAnchor, constant: 10),
             imageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
             imageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
-            imageView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.6)
+            imageView.heightAnchor.constraint(equalTo: heightAnchor)
             ])
     }
     
+    // Curently disable
     private func setupLabel() {
         addSubview(quizLabel)
         

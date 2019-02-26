@@ -15,6 +15,7 @@ class fourButtonStackView: UIStackView {
         super.init(frame: frame)
         axis = .vertical
         spacing = 50
+        backgroundColor = .green
         distribution = .fillEqually
         addArrangedSubview(firstButtonRow)
         addArrangedSubview(secondButtonRow)
@@ -23,6 +24,9 @@ class fourButtonStackView: UIStackView {
         firstButtonRow.rightButton.addTarget(self, action: #selector(answerButtonPressRevised(_:)), for: .touchUpInside)
         secondButtonRow.leftButton.addTarget(self, action: #selector(answerButtonPressRevised(_:)), for: .touchUpInside)
         secondButtonRow.rightButton.addTarget(self, action: #selector(answerButtonPressRevised(_:)), for: .touchUpInside)
+        
+        firstButtonRow.topAnchor.constraint(equalTo: topAnchor, constant: 20).isActive = true
+        
     }
     
     required init(coder: NSCoder) {
@@ -31,6 +35,8 @@ class fourButtonStackView: UIStackView {
     
     var firstButtonRow = buttonRowStackView()
     var secondButtonRow = buttonRowStackView()
+    
+    
     
     @objc func answerButtonPressRevised(_ sender: AnswerButton) {
         var endOfQuiz = false
@@ -53,7 +59,7 @@ class fourButtonStackView: UIStackView {
             
             if sender.titleLabel?.text == answer {
                 sender.rightAnswer()
-                //sender.rotate360Degrees()
+                sender.rotate360Degrees()
                 questionVC.score += 1
                 questionVC.scoreLabel.text = "Score: \(questionVC.score)"
                 buttonsDisable()
@@ -64,7 +70,7 @@ class fourButtonStackView: UIStackView {
                     Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(delayTransition(timer:)), userInfo: nextIndex, repeats: false)
                 }
             } else {
-                sender.backgroundColor = .red
+                sender.backgroundColor = .red                
                 sender.shake()
                 buttonsDisable()
                 if endOfQuiz{

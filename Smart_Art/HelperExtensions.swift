@@ -46,11 +46,11 @@ extension UIView {
         layer.add(animation, forKey: "shake")
     }
     
-//    func rotate360Degrees() {
-//        let rotateAnimation = CABasicAnimation(keyPath: "transform.rotation")
-//        rotateAnimation.fromValue = 0.0
-//        rotateAnimation.toValue = CGFloat.pi
-//        rotateAnimation.duration = 0.2
-//        layer.add(rotateAnimation, forKey: nil)
-//    }
+    func rotate360Degrees() {
+        let rotateAnimation = CABasicAnimation(keyPath: "transform.rotation")
+        rotateAnimation.fromValue = 0.0
+        rotateAnimation.toValue = CGFloat.pi
+        rotateAnimation.duration = 0.2
+        layer.add(rotateAnimation, forKey: nil)
+    }
 }

@@ -35,7 +35,7 @@ class QuizCollectionView: UICollectionView, UICollectionViewDataSource{
         let question = mockQuiz.questions[indexPath.row]
         
         let cell = dequeueReusableCell(withReuseIdentifier: "QuizCell", for: indexPath) as! QuestionCell
-        cell.quizLabel.text = question.question
+        //cell.quizLabel.text = question.question
         getImage(urlString: question.image) { (image) in
             if let image = image {
                 DispatchQueue.main.async {

@@ -14,7 +14,6 @@ class buttonRowStackView: UIStackView {
         axis = .horizontal
         spacing = 30
         distribution = .fillEqually
-        
         addArrangedSubview(rightButton)
         addArrangedSubview(leftButton)
     }
