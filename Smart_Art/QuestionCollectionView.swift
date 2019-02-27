@@ -59,10 +59,10 @@ extension QuestionCollectionView: UICollectionViewDelegate {
         currentOptions.shuffle()
         
         if let questionVC = findViewController() as? QuestionViewController {
-            questionVC.buttonStack.firstButtonRow.leftButton.setTitle(currentOptions[0], for: .normal)
-            questionVC.buttonStack.firstButtonRow.rightButton.setTitle(currentOptions[1], for: .normal)
-            questionVC.buttonStack.secondButtonRow.leftButton.setTitle(currentOptions[2], for: .normal)
-            questionVC.buttonStack.secondButtonRow.rightButton.setTitle(currentOptions[3], for: .normal)
+            questionVC.housingView.buttonStack.firstButtonRow.leftButton.setTitle(currentOptions[0], for: .normal)
+            questionVC.housingView.buttonStack.firstButtonRow.rightButton.setTitle(currentOptions[1], for: .normal)
+            questionVC.housingView.buttonStack.secondButtonRow.leftButton.setTitle(currentOptions[2], for: .normal)
+            questionVC.housingView.buttonStack.secondButtonRow.rightButton.setTitle(currentOptions[3], for: .normal)
         }
     }
 }

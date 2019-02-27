@@ -14,8 +14,8 @@ class ProgressionButton: UIButton {
         super.init(frame: frame)
         layer.cornerRadius = 20
         backgroundColor = .toolBarColor
-        setTitle("NEXT", for: .normal)
-        titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
+        setTitle("Next", for: .normal)
+        titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         titleLabel?.textAlignment = .center
         titleLabel?.adjustsFontSizeToFitWidth = true
         titleLabel?.textColor = .white

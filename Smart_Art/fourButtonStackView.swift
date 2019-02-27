@@ -38,13 +38,12 @@ class fourButtonStackView: UIStackView {
     var secondButtonRow = buttonRowStackView()
     
     
-    
     @objc func answerButtonPressRevised(_ sender: AnswerButton) {
         var endOfQuiz = false
         
         if let questionVC = findViewController() as? QuestionViewController {
             // Get the index of the current question cell
-            let cellIndex = questionVC.cv.indexPathsForVisibleItems
+            let cellIndex = questionVC.housingView.cv.indexPathsForVisibleItems
             // Get the index of next
             guard let nextItemIndex = cellIndex.first.map({IndexPath(item: $0.row + 1, section: $0.section)}) else { return }
             // Creating a dictionary to pass it into the timer selector
@@ -62,7 +61,7 @@ class fourButtonStackView: UIStackView {
                 sender.rightAnswer()
                 sender.rotate360Degrees()
                 questionVC.score += 1
-                questionVC.scoreLabel.text = "Score: \(questionVC.score)"
+                questionVC.housingView.scoreLabel.text = "Score: \(questionVC.score)"
                 buttonsDisable()
                 if endOfQuiz{
                     print("End of quiz")
@@ -72,8 +71,7 @@ class fourButtonStackView: UIStackView {
                 }
             } else {
                 sender.backgroundColor = .red                
-                //sender.shake()
-                sender.rotate360Degrees()
+                sender.shake()
                 buttonsDisable()
                 if endOfQuiz{
                     print("End of quiz")
@@ -94,7 +92,7 @@ class fourButtonStackView: UIStackView {
         let index = context["index", default: IndexPath(row: 0, section: 0)]
         
         if let quizVC = findViewController() as? QuestionViewController  {
-            quizVC.cv.scrollToItem(at: index, at: .left, animated: true)
+            quizVC.housingView.cv.scrollToItem(at: index, at: .left, animated: true)
             reEnableButton()
         }
     }
