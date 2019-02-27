@@ -8,7 +8,7 @@
 
 import UIKit
 
-class QuizCollectionView: UICollectionView, UICollectionViewDataSource{
+class QuestionCollectionView: UICollectionView, UICollectionViewDataSource{
     
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
@@ -49,7 +49,7 @@ class QuizCollectionView: UICollectionView, UICollectionViewDataSource{
     
 }
 
-extension QuizCollectionView: UICollectionViewDelegate {
+extension QuestionCollectionView: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         let currentQuestion = mockQuiz.questions[indexPath.row]
@@ -58,11 +58,11 @@ extension QuizCollectionView: UICollectionViewDelegate {
         
         currentOptions.shuffle()
         
-        if let quizVC = findViewController() as? QuestionViewController {
-            quizVC.buttonStack.firstButtonRow.leftButton.setTitle(currentOptions[0], for: .normal)
-            quizVC.buttonStack.firstButtonRow.rightButton.setTitle(currentOptions[1], for: .normal)
-            quizVC.buttonStack.secondButtonRow.leftButton.setTitle(currentOptions[2], for: .normal)
-            quizVC.buttonStack.secondButtonRow.rightButton.setTitle(currentOptions[3], for: .normal)
+        if let questionVC = findViewController() as? QuestionViewController {
+            questionVC.buttonStack.firstButtonRow.leftButton.setTitle(currentOptions[0], for: .normal)
+            questionVC.buttonStack.firstButtonRow.rightButton.setTitle(currentOptions[1], for: .normal)
+            questionVC.buttonStack.secondButtonRow.leftButton.setTitle(currentOptions[2], for: .normal)
+            questionVC.buttonStack.secondButtonRow.rightButton.setTitle(currentOptions[3], for: .normal)
         }
     }
 }

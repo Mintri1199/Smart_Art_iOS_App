@@ -18,6 +18,7 @@ class QuestionViewController: UIViewController {
         setupScoreLabel()
         setupButtonStack()
         setupCollectionView()
+        setupProgressionButton()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -25,9 +26,20 @@ class QuestionViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
         scoreLabel.text = "Score: \(score)"
     }
-    
+    // Custom UIs
     var buttonStack = fourButtonStackView(frame: .zero)
-    var cv = QuizCollectionView(frame: .zero, collectionViewLayout: QuizLayout())
+    var cv = QuestionCollectionView(frame: .zero, collectionViewLayout: QuizLayout())
+    var scoreLabel: UILabel = {
+        var label = UILabel(frame: .zero)
+        label.textAlignment = .left
+        label.textColor = .white
+        label.font = UIFont.boldSystemFont(ofSize: 25)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.backgroundColor = .mainBackgroundColor
+        return label
+    }()
+    var progressionButton = ProgressionButton()
+    
     
     func setupButtonStack() {
         view.addSubview(buttonStack)
@@ -51,16 +63,6 @@ class QuestionViewController: UIViewController {
             ])
     }
     
-    var scoreLabel: UILabel = {
-        var label = UILabel(frame: .zero)
-        label.textAlignment = .left
-        label.textColor = .white
-        label.font = UIFont.boldSystemFont(ofSize: 25)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.backgroundColor = .mainBackgroundColor
-        return label
-    }()
-    
     private func setupScoreLabel() {
         view.addSubview(scoreLabel)
         
@@ -72,7 +74,16 @@ class QuestionViewController: UIViewController {
             ])
     }
     
-    
+    private func setupProgressionButton() {
+        view.addSubview(progressionButton)
+        
+        NSLayoutConstraint.activate([
+            progressionButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            progressionButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -15),
+            progressionButton.heightAnchor.constraint(equalTo: scoreLabel.heightAnchor),
+            progressionButton.widthAnchor.constraint(equalToConstant: view.bounds.width/4)
+            ])
+    }
 }
 
 

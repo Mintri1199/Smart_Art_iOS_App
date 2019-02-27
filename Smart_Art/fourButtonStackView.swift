@@ -18,6 +18,7 @@ class fourButtonStackView: UIStackView {
         distribution = .fillEqually
         addArrangedSubview(firstButtonRow)
         addArrangedSubview(secondButtonRow)
+        isLayoutMarginsRelativeArrangement = true
         translatesAutoresizingMaskIntoConstraints = false
         // Setting action for the buttons
         firstButtonRow.leftButton.addTarget(self, action: #selector(answerButtonPressRevised(_:)), for: .touchUpInside)
@@ -25,7 +26,7 @@ class fourButtonStackView: UIStackView {
         secondButtonRow.leftButton.addTarget(self, action: #selector(answerButtonPressRevised(_:)), for: .touchUpInside)
         secondButtonRow.rightButton.addTarget(self, action: #selector(answerButtonPressRevised(_:)), for: .touchUpInside)
         
-        firstButtonRow.topAnchor.constraint(equalTo: topAnchor, constant: 20).isActive = true
+        directionalLayoutMargins = NSDirectionalEdgeInsets(top: 20, leading: 0, bottom: 0, trailing: 0)
         
     }
     
@@ -71,7 +72,8 @@ class fourButtonStackView: UIStackView {
                 }
             } else {
                 sender.backgroundColor = .red                
-                sender.shake()
+                //sender.shake()
+                sender.rotate360Degrees()
                 buttonsDisable()
                 if endOfQuiz{
                     print("End of quiz")

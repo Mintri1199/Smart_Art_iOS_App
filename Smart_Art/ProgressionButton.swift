@@ -14,11 +14,12 @@ class ProgressionButton: UIButton {
         super.init(frame: frame)
         layer.cornerRadius = 20
         backgroundColor = .toolBarColor
-        titleLabel?.text = "NEXT"
+        setTitle("NEXT", for: .normal)
         titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
         titleLabel?.textAlignment = .center
         titleLabel?.adjustsFontSizeToFitWidth = true
         titleLabel?.textColor = .white
+        translatesAutoresizingMaskIntoConstraints = false
     }
     
     required init?(coder aDecoder: NSCoder) {
