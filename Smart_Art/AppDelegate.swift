@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationController = UINavigationController(rootViewController: QuizViewController())
         
         if let window = window{
-            window.rootViewController = navigationController
+            window.rootViewController = FinishViewController() //navigationController
             window.makeKeyAndVisible()
         }
         

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 // Question model
 struct Question: Codable {
@@ -32,5 +33,12 @@ struct Quiz: Codable {
         self.categories = categories
         self.questions = questions
     }
+}
+
+// Finish Quiz Model
+struct FinishQuiz {
+    let photos: [UIImage]
+    let correctAnswers: [String]
+    let userAnswers: [String]
 }
 

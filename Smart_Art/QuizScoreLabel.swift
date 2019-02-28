@@ -15,7 +15,7 @@ class QuizScoreLabel: UILabel {
         super.init(frame: frame)
         numberOfLines = 3
         backgroundColor = .yellow
-        text = "Score: 01293243"
+        text = "Score: 0"
         font = UIFont.systemFont(ofSize: 30)
         textAlignment = .center
         adjustsFontSizeToFitWidth = true  // Must the size to fit all the text

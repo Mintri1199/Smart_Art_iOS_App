@@ -8,13 +8,35 @@
 
 import UIKit
 
-// This screen will show when the user is finish with the quiz
-class FinishViewController: UIViewController {
 
+// This screen will show when the user is finish with the quiz
+class FinishViewController: UIViewController, passUserResult {
+    var userResult: FinishQuiz?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        view.backgroundColor = .mainBackgroundColor
+        print("Finished quiz")
         
+        setupCollectionView()
     }
 
+    func passData(result: FinishQuiz) {
+        userResult = result
+    }
+    
+    var cv = FinishCollectionView(frame: .zero, collectionViewLayout: FinishCVLayout())
+    
+    func setupCollectionView() {
+        view.addSubview(cv)
+        
+        NSLayoutConstraint.activate([
+            cv.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
+            cv.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
+            cv.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            cv.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+            ])
+        
+    }
+    
 }

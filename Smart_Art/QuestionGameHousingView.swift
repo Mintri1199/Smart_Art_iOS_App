@@ -39,7 +39,6 @@ class QuestionGameHousingView: UIView {
         var label = UILabel(frame: .zero)
         label.textAlignment = .left
         label.textColor = .white
-        //label.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         label.font = UIFont.boldSystemFont(ofSize: 25)
         label.translatesAutoresizingMaskIntoConstraints = false
         label.backgroundColor = .clear

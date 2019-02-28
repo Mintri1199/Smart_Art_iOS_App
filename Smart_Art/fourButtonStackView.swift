@@ -25,8 +25,8 @@ class fourButtonStackView: UIStackView {
         firstButtonRow.rightButton.addTarget(self, action: #selector(answerButtonPressRevised(_:)), for: .touchUpInside)
         secondButtonRow.leftButton.addTarget(self, action: #selector(answerButtonPressRevised(_:)), for: .touchUpInside)
         secondButtonRow.rightButton.addTarget(self, action: #selector(answerButtonPressRevised(_:)), for: .touchUpInside)
-        
-        directionalLayoutMargins = NSDirectionalEdgeInsets(top: 20, leading: 0, bottom: 0, trailing: 0)
+        // Provide padding for spin animation since I can't use safeAreaLayoutGuide
+        directionalLayoutMargins = NSDirectionalEdgeInsets(top: 18, leading: 0, bottom: 34, trailing: 0)
         
     }
     
@@ -44,61 +44,41 @@ class fourButtonStackView: UIStackView {
         if let questionVC = findViewController() as? QuestionViewController {
             // Get the index of the current question cell
             let cellIndex = questionVC.housingView.cv.indexPathsForVisibleItems
-            // Get the index of next
+            // Map the current cell index into the next
             guard let nextItemIndex = cellIndex.first.map({IndexPath(item: $0.row + 1, section: $0.section)}) else { return }
-            // Creating a dictionary to pass it into the timer selector
-            let nextIndex = ["index": nextItemIndex]
             // Check if the cell is the last cell in the collectionView
             if nextItemIndex[1] == mockQuiz.questions.count {
+                questionVC.housingView.progressionButton.setTitle("Done", for: .normal)
                 endOfQuiz = true
             }
-            
             // Get the current question accordance to the cell's index
             let currentQuestion = mockQuiz.questions[cellIndex[0][1]]
             let answer = currentQuestion.correct
-            
+            // Check if the Button's titleLabel text is equal to the answer
             if sender.titleLabel?.text == answer {
                 sender.rightAnswer()
                 sender.rotate360Degrees()
+                questionVC.housingView.progressionButton.isHidden = false
+                questionVC.endOfQuiz = endOfQuiz
+                questionVC.nextItemIndex = nextItemIndex
                 questionVC.score += 1
                 questionVC.housingView.scoreLabel.text = "Score: \(questionVC.score)"
                 buttonsDisable()
-                if endOfQuiz{
-                    print("End of quiz")
-                } else {
-                    print("Correct Answer pressed")
-                    Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(delayTransition(timer:)), userInfo: nextIndex, repeats: false)
-                }
+                print("Correct Answer pressed")
             } else {
                 sender.backgroundColor = .red                
                 sender.shake()
                 buttonsDisable()
-                if endOfQuiz{
-                    print("End of quiz")
-                } else{
-                    print("Wrong Answer pressed")
-                    Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(delayTransition(timer:)), userInfo: nextIndex, repeats: false)
-                }
+                questionVC.housingView.progressionButton.isHidden = false
+                questionVC.endOfQuiz = endOfQuiz
+                questionVC.nextItemIndex = nextItemIndex
+                print("Wrong Answer pressed")
             }
         }
     }
     
-    // Timer function after the interval
-    @objc func delayTransition(timer: Timer){
-        // Since you can't pass argument in a selector, you have to utilizes useInfo to handle passing arguments
-        // Guard type cast userInfo because it is Any? by default
-        guard let context = timer.userInfo as? [String : IndexPath] else { return }
-        // Then access the element you want
-        let index = context["index", default: IndexPath(row: 0, section: 0)]
-        
-        if let quizVC = findViewController() as? QuestionViewController  {
-            quizVC.housingView.cv.scrollToItem(at: index, at: .left, animated: true)
-            reEnableButton()
-        }
-    }
-    
     // Disable all buttons once one is pressed
-    func buttonsDisable() {
+    private func buttonsDisable() {
         firstButtonRow.leftButton.isEnabled = false
         firstButtonRow.rightButton.isEnabled = false
         secondButtonRow.leftButton.isEnabled = false
