@@ -289,6 +289,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4400BF7C2203914A0014C62B /* Build configuration list for PBXNativeTarget "Smart_Art" */;
 			buildPhases = (
+				44B434C3222A59CB000D72E0 /* ShellScript */,
 				EA46E7A186CB1B8977C74F79 /* [CP] Check Pods Manifest.lock */,
 				4400BF4D220391480014C62B /* Sources */,
 				4400BF4E220391480014C62B /* Frameworks */,
@@ -412,6 +413,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		44B434C3222A59CB000D72E0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
 		4E1BB6E17BF803E0F590E4EF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

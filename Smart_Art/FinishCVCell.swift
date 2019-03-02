@@ -10,20 +10,14 @@ import UIKit
 
 // Custom Cell for Finish Collection View
 class FinishCVCell: UICollectionViewCell {
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         backgroundColor = .white
         layer.cornerRadius = 30
     }
-    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    
-    
 //    func setup () {
 //        addSubview(<#T##view: UIView##UIView#>)
 //
@@ -35,6 +29,4 @@ class FinishCVCell: UICollectionViewCell {
 //            ])
 //
 //    }
-    
-    
 }

@@ -9,7 +9,7 @@
 import UIKit
 
 // Csustom horizontal stack of buttons
-class buttonRowStackView: UIStackView {
+class ButtonRowStackView: UIStackView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         axis = .horizontal
@@ -18,12 +18,9 @@ class buttonRowStackView: UIStackView {
         addArrangedSubview(rightButton)
         addArrangedSubview(leftButton)
     }
-    
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     var rightButton = AnswerButton(frame: .zero)
-    
     var leftButton = AnswerButton(frame: .zero)
 }

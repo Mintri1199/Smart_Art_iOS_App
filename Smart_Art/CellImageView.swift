@@ -9,7 +9,6 @@
 import UIKit
 // Custom ImageView for selection screen
 class CellImageView: UIImageView {
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         image = UIImage(named: "cellPlaceholder")
@@ -17,11 +16,9 @@ class CellImageView: UIImageView {
         clipsToBounds = true
         translatesAutoresizingMaskIntoConstraints = false
     }
-    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         self.roundCorners([.topRight, .topLeft], radius: 30)

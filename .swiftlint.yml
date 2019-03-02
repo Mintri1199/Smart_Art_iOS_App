@@ -1,0 +1,17 @@
+disabled_rules:
+  - identifier_name
+  - cyclomatic_complexity
+  - function_body_length
+  - file_length
+  - type_body_length
+  - force_cast
+  - force_try
+  - function_parameter_count
+  - line_length
+  - large_tuple
+  - shorthand_operator
+  - todo
+  - nesting
+  - syntactic_sugar
+  - type_name
+  

@@ -24,4 +24,3 @@ class SelectionLayout: UICollectionViewFlowLayout {
         self.sectionInsetReference = .fromSafeArea
     }
 }
-

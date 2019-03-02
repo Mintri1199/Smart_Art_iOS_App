@@ -8,28 +8,23 @@
 
 import UIKit
 
-
 // This screen will show when the user is finish with the quiz
 class FinishViewController: UIViewController {
-    
     var userResult: FinishQuiz? {
         didSet {
             print(userResult)
-            self.cv.reloadData()
+            self.collectionView.reloadData()
         }
     }
-    
-    var userAnswer: [String]?{
+    var userAnswer: [String]? {
         didSet {
             print("Passed user's answer: \(userAnswer)")
         }
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .mainBackgroundColor
         print("Finished quiz")
-        
         setupCollectionView()
         print("The userResult: \(userResult)")
     }
@@ -37,17 +32,14 @@ class FinishViewController: UIViewController {
     func passData(result: FinishQuiz) {
         userResult = result
     }
-    
-    var cv = FinishCollectionView(frame: .zero, collectionViewLayout: FinishCVLayout())
-    
+    var collectionView = FinishCollectionView(frame: .zero, collectionViewLayout: FinishCVLayout())
     func setupCollectionView() {
-        view.addSubview(cv)
-        
+        view.addSubview(collectionView)
         NSLayoutConstraint.activate([
-            cv.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
-            cv.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
-            cv.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
-            cv.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
-            ])        
+            collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0)
+            ])
     }
 }

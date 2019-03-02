@@ -17,23 +17,20 @@ class AnswerButton: UIButton {
         titleLabel?.numberOfLines = 2
         titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
         titleLabel?.textAlignment = .center
-        titleLabel?.adjustsFontSizeToFitWidth = true 
+        titleLabel?.adjustsFontSizeToFitWidth = true
         titleLabel?.minimumScaleFactor = 0.5
         titleLabel?.textColor = .white
         titleEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
     }
-    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     func rightAnswer() {
         UIView.animate(withDuration: 0.2, delay: 0, options: .curveLinear, animations: {
             self.backgroundColor = UIColor.green
             self.titleLabel?.textColor = .white
-        }) { (bool) in
+        }) { (_) in
             self.layer.removeAllAnimations()
         }
     }
-    
 }

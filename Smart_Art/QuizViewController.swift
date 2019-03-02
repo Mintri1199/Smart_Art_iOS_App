@@ -17,24 +17,20 @@ class QuizViewController: UIViewController {
         view.backgroundColor = .mainBackgroundColor
         setupCollectionView()
     }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.barTintColor = .toolBarColor
         //self.tabBarController?.tabBar.isHidden = false
     }
 
-    
     func setupCollectionView() {
         let collectionView = QuizSelectionCollectionView(frame: .zero, collectionViewLayout: SelectionLayout())
         view.addSubview(collectionView)
-        
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: view.topAnchor),
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
             ])
-        
     }
 }

@@ -15,7 +15,6 @@ struct Question: Codable {
     let question: String
     let correct: String
     let incorrect: [String]
-    
     init(image: String, question: String, correct: String, incorrect: [String]) {
         self.image = image
         self.question = question
@@ -28,7 +27,6 @@ struct Question: Codable {
 struct Quiz: Codable {
     let categories: [String]
     let questions: [Question]
-    
     init(categories: [String], questions: [Question]) {
         self.categories = categories
         self.questions = questions
@@ -40,11 +38,9 @@ struct FinishQuiz {
     var photos: [UIImage]?
     var correctAnswers: [String]?
     var userAnswers: [String]?
-    
     init(photos: [UIImage], correctAnswers: [String], userAnswers: [String]) {
         self.photos = photos
         self.correctAnswers = correctAnswers
         self.userAnswers = userAnswers
     }
 }
-

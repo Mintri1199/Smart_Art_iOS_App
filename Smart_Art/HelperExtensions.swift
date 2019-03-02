@@ -23,7 +23,7 @@ extension UIImageView {
 
 // Round corners on most UIView
 extension UIView {
-    func roundCorners(corners:UIRectCorner, radius: CGFloat) {
+    func roundCorners(corners: UIRectCorner, radius: CGFloat) {
         let path = UIBezierPath(roundedRect: self.bounds,
                                 byRoundingCorners: corners,
                                 cornerRadii: CGSize(width: radius, height: radius))
@@ -37,7 +37,6 @@ extension UIView {
 
 // Animations for UIView
 extension UIView {
-    
     func shake() {
         let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
         animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
@@ -45,7 +44,6 @@ extension UIView {
         animation.values = [-10.0, 10.0, -10.0, 10.0, -5.0, 5.0, -5.0, 5.0, 0.0 ]
         layer.add(animation, forKey: "shake")
     }
-    
     func rotate360Degrees() {
         let rotateAnimation = CABasicAnimation(keyPath: "transform.rotation")
         rotateAnimation.fromValue = 0.0

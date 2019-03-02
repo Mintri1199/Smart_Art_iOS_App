@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 // This function allow us to get an image using a url string for the individual question
-func getImage(urlString: String, completion: @escaping (UIImage?) -> ()) {
+func getImage(urlString: String, completion: @escaping (UIImage?) -> Void) {
     // Turn string parameter into url
     let imageUrl = URL(string: urlString)
     // configure urlSession
@@ -18,9 +18,8 @@ func getImage(urlString: String, completion: @escaping (UIImage?) -> ()) {
     // configure urlRequest
     let request = URLRequest(url: imageUrl!)
 
-    let task = session.dataTask(with: request) { (data, response, error) in
+    let task = session.dataTask(with: request) { (data, _, error) in
         guard let data = data, error == nil else { return }
-        
         let image = UIImage(data: data)
         completion(image)
     }

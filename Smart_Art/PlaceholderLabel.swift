@@ -19,7 +19,6 @@ class PlaceholderLabel: UILabel {
         font = UIFont.boldSystemFont(ofSize: 20)
         textAlignment = .left
     }
-    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
