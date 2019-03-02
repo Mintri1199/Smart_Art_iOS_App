@@ -22,6 +22,8 @@ class FinishCVCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
+    
 //    func setup () {
 //        addSubview(<#T##view: UIView##UIView#>)
 //
@@ -33,4 +35,6 @@ class FinishCVCell: UICollectionViewCell {
 //            ])
 //
 //    }
+    
+    
 }
