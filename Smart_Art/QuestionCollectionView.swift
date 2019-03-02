@@ -9,6 +9,9 @@
 import UIKit
 
 class QuestionCollectionView: UICollectionView, UICollectionViewDataSource{
+    // SelectedQuiz
+    var selectedQuiz: Quiz?
+    
     
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
@@ -29,11 +32,13 @@ class QuestionCollectionView: UICollectionView, UICollectionViewDataSource{
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return mockQuiz.questions.count
+        guard let quiz = selectedQuiz else { print("Can't find selected quiz"); return 0}
+        return quiz.questions.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let question = mockQuiz.questions[indexPath.row]
+        guard let quiz = selectedQuiz else { print("Can't find selected quiz"); return UICollectionViewCell()}
+        let question = quiz.questions[indexPath.row]
         
         let cell = dequeueReusableCell(withReuseIdentifier: "QuizCell", for: indexPath) as! QuestionCell
         //cell.quizLabel.text = question.question
@@ -46,7 +51,6 @@ class QuestionCollectionView: UICollectionView, UICollectionViewDataSource{
         }
         return cell
     }
-    
 }
 
 extension QuestionCollectionView: UICollectionViewDelegate {
@@ -55,7 +59,7 @@ extension QuestionCollectionView: UICollectionViewDelegate {
         let currentQuestion = mockQuiz.questions[indexPath.row]
         var currentOptions = currentQuestion.incorrect
         currentOptions.append(currentQuestion.correct)
-        
+        // Shuffle the array so the order of the options would be random
         currentOptions.shuffle()
         
         if let questionVC = findViewController() as? QuestionViewController {

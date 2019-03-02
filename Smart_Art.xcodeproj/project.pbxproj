@@ -212,7 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				44D9BF0822285DF0007969C5 /* FinishScreen */,
-				4420174F221B885900B45F56 /* SelectionScreen */,
+				4420174F221B885900B45F56 /* QuizScreen */,
 				4420174E221B87C700B45F56 /* QuestionScreen */,
 			);
 			name = QuizScreen;
@@ -234,7 +234,7 @@
 			name = QuestionScreen;
 			sourceTree = "<group>";
 		};
-		4420174F221B885900B45F56 /* SelectionScreen */ = {
+		4420174F221B885900B45F56 /* QuizScreen */ = {
 			isa = PBXGroup;
 			children = (
 				44201750221B889D00B45F56 /* QuizSelectionCell.swift */,
@@ -244,7 +244,7 @@
 				44201758221B9B0700B45F56 /* QuizNameLabel.swift */,
 				4420175A221B9FDC00B45F56 /* QuizScoreLabel.swift */,
 			);
-			name = SelectionScreen;
+			name = QuizScreen;
 			sourceTree = "<group>";
 		};
 		44D9BF0822285DF0007969C5 /* FinishScreen */ = {

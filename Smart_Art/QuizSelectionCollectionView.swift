@@ -45,8 +45,11 @@ class QuizSelectionCollectionView: UICollectionView, UICollectionViewDataSource,
     // func that happen when the user tap on the cell
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // Determine the viewController that this collectionView is in
-        guard let questionScreen = self.findViewController() as? QuizViewController else { print("ill assign collectionView"); return }
-        questionScreen.navigationController?.pushViewController(QuestionViewController(), animated: true)
+        guard let quizScreen = self.findViewController() as? QuizViewController else { print("ill assign collectionView"); return }
+        let questionVC = QuestionViewController()
+        questionVC.housingView.cv.selectedQuiz = mockQuiz
+        
+        quizScreen.navigationController?.pushViewController(questionVC, animated: true)
     }
 }
 

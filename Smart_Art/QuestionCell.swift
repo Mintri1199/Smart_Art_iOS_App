@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import AVFoundation
 import NVActivityIndicatorView
 
 class QuestionCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .mainBackgroundColor
+        backgroundColor = .green
         addSubview(AI)
         NSLayoutConstraint.activate([
             AI.topAnchor.constraint(equalTo: topAnchor, constant: 10),
@@ -31,7 +32,9 @@ class QuestionCell: UICollectionViewCell {
     }
     
     var imageView: UIImageView = {
-        var view = UIImageView(frame: .zero)
+        var view = UIImageView()
+        view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.backgroundColor = .cyan
         view.contentMode = .scaleAspectFit
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -43,10 +46,10 @@ class QuestionCell: UICollectionViewCell {
         addSubview(imageView)
         
         NSLayoutConstraint.activate([
-            imageView.topAnchor.constraint(equalTo: topAnchor, constant: 10),
-            imageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            imageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
-            imageView.heightAnchor.constraint(equalTo: heightAnchor)
+            imageView.centerYAnchor.constraint(equalTo: centerYAnchor),
+            imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            imageView.heightAnchor.constraint(lessThanOrEqualTo: heightAnchor, multiplier: 1, constant: -30),
+            imageView.widthAnchor.constraint(lessThanOrEqualTo: widthAnchor, multiplier: 1, constant: -30)
             ])
     }
     
@@ -73,6 +76,13 @@ class QuestionCell: UICollectionViewCell {
         if let imageToDisplay = image {
             AI.stopAnimating()
             imageView.image = imageToDisplay
+            imageView.layoutIfNeeded()
+            let realImageRect = AVMakeRect(aspectRatio: imageToDisplay.size, insideRect: imageView.frame)
+            var testingView = UIView(frame: realImageRect)
+            testingView.backgroundColor = .red
+            addSubview(testingView)
+            
+            
         } else {
             imageView.image = nil
             AI.startAnimating()

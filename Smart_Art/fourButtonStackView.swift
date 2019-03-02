@@ -43,18 +43,30 @@ class fourButtonStackView: UIStackView {
         
         if let questionVC = findViewController() as? QuestionViewController {
             // Get the index of the current question cell
-            let cellIndex = questionVC.housingView.cv.indexPathsForVisibleItems
+            let cellIndexPathArray = questionVC.housingView.cv.indexPathsForVisibleItems
+            // Map it into just the index path and not an array
+            guard let cellIndex = cellIndexPathArray.first.map({IndexPath(item: $0.row, section: $0.section)}) else { return }
+            print("The current cell index: \(cellIndex)")
+            let cell = questionVC.housingView.cv.cellForItem(at: cellIndex) as? QuestionCell
+            // Selected quiz
+            let quiz = questionVC.housingView.cv.selectedQuiz!
             // Map the current cell index into the next
-            guard let nextItemIndex = cellIndex.first.map({IndexPath(item: $0.row + 1, section: $0.section)}) else { return }
+            let nextItemIndex =  IndexPath(row: cellIndex[1] + 1, section: 0)
+            print("The next cell index: \(nextItemIndex)")
             // Check if the cell is the last cell in the collectionView
-            if nextItemIndex[1] == mockQuiz.questions.count {
+            
+            if nextItemIndex[1] == quiz.questions.count{
                 questionVC.housingView.progressionButton.setTitle("Done", for: .normal)
                 endOfQuiz = true
             }
             // Get the current question accordance to the cell's index
-            let currentQuestion = mockQuiz.questions[cellIndex[0][1]]
+            let currentQuestion = quiz.questions[cellIndex[1]]
             let answer = currentQuestion.correct
             // Check if the Button's titleLabel text is equal to the answer
+            let chosenAnswer = sender.titleLabel?.text
+            questionVC.housingView.progressionButton.questionPhoto = cell?.imageView.image!
+            questionVC.housingView.progressionButton.answerChosen = chosenAnswer!
+            
             if sender.titleLabel?.text == answer {
                 sender.rightAnswer()
                 sender.rotate360Degrees()

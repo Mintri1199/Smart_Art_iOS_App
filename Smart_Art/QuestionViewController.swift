@@ -8,23 +8,16 @@
 
 import UIKit
 
-protocol passUserResult {
-    func passData(result: FinishQuiz)
-}
-
 class QuestionViewController: UIViewController {
     var score = 0
     var nextItemIndex: IndexPath?
     var endOfQuiz: Bool?
-    var delegate: passUserResult?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBarController?.tabBar.isHidden = true
         view.backgroundColor = .mainBackgroundColor
         setupHousingView()
-        
-
     }
     
     override func viewWillAppear(_ animated: Bool) {

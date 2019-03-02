@@ -37,8 +37,14 @@ struct Quiz: Codable {
 
 // Finish Quiz Model
 struct FinishQuiz {
-    let photos: [UIImage]
-    let correctAnswers: [String]
-    let userAnswers: [String]
+    var photos: [UIImage]?
+    var correctAnswers: [String]?
+    var userAnswers: [String]?
+    
+    init(photos: [UIImage], correctAnswers: [String], userAnswers: [String]) {
+        self.photos = photos
+        self.correctAnswers = correctAnswers
+        self.userAnswers = userAnswers
+    }
 }
 

@@ -26,7 +26,7 @@ class FinishCollectionView: UICollectionView, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard let finishVC = findViewController() as? FinishViewController else { print("Ill assign Collection View"); return 0 }
-        guard let result = finishVC.userResult?.correctAnswers.count else { print("Can not read result object"); return 4 }
+        guard let result = finishVC.userResult?.correctAnswers!.count else { print("Can not read result object"); return 4 }
         return 4
     }
     

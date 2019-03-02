@@ -10,8 +10,20 @@ import UIKit
 
 
 // This screen will show when the user is finish with the quiz
-class FinishViewController: UIViewController, passUserResult {
-    var userResult: FinishQuiz?
+class FinishViewController: UIViewController {
+    
+    var userResult: FinishQuiz? {
+        didSet {
+            print(userResult)
+            self.cv.reloadData()
+        }
+    }
+    
+    var userAnswer: [String]?{
+        didSet {
+            print("Passed user's answer: \(userAnswer)")
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +31,7 @@ class FinishViewController: UIViewController, passUserResult {
         print("Finished quiz")
         
         setupCollectionView()
+        print("The userResult: \(userResult)")
     }
 
     func passData(result: FinishQuiz) {
@@ -35,8 +48,6 @@ class FinishViewController: UIViewController, passUserResult {
             cv.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
             cv.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
             cv.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
-            ])
-        
+            ])        
     }
-    
 }
