@@ -55,11 +55,10 @@ class FinishCVCell: UICollectionViewCell {
     func setupLearnMoreButton() {
         addSubview(learnMoreButton)
         NSLayoutConstraint.activate([
-            learnMoreButton.topAnchor.constraint(equalTo: labelsStack.bottomAnchor, constant: 5),
+            learnMoreButton.topAnchor.constraint(equalTo: labelsStack.bottomAnchor, constant: 10),
             learnMoreButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -15),
             learnMoreButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             learnMoreButton.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.5)
             ])
-        
     }
 }

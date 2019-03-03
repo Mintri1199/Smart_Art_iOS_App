@@ -14,8 +14,8 @@ class AnswerLabel: UILabel {
     override init(frame: CGRect) {
         super.init(frame: frame)
         translatesAutoresizingMaskIntoConstraints = false
-        backgroundColor = .green
-        font = UIFont.systemFont(ofSize: 15)
+        backgroundColor = .white
+        font = UIFont.systemFont(ofSize: 20)
         adjustsFontSizeToFitWidth = true
         minimumScaleFactor = 0.5
         numberOfLines = 2
