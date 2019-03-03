@@ -7,13 +7,13 @@
 //
 
 import UIKit
-
+import SafariServices
 
 // This screen will show when the user is finish with the quiz
-class FinishViewController: UIViewController {
+class FinishViewController: UIViewController, SFSafariViewControllerDelegate {
+    let url = "https://en.wikipedia.org/wiki/"
     var userResult: FinishQuiz? {
         didSet {
-            print(userResult)
             self.collectionView.reloadData()
         }
     }
@@ -23,7 +23,6 @@ class FinishViewController: UIViewController {
         view.backgroundColor = .mainBackgroundColor
         print("Finished quiz")
         setupCollectionView()
-        print("The userResult: \(userResult)")
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -50,15 +49,12 @@ class FinishViewController: UIViewController {
         // Show the navBar
         navigationController?.navigationBar.isHidden = false
     }
-//    let returnButton: UIButton = {
-//        var button = UIButton(frame: .zero)
-//        button.setTitle("RETURN", for: .normal)
-//        button.setTitleColor(.white, for: .normal)
-//        button.addTarget(self, action: #selector(returnButtonTapped), for: .touchUpInside)
-//        return button
-//    }()
-    // Use Delegation to passed back score
+    // Use Delegation to passed back score later and figure out how to do persistence
     @objc func returnButtonTapped() {
         navigationController?.popToRootViewController(animated: true)
+    }
+    
+    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
+        dismiss(animated: true, completion: nil)
     }
 }

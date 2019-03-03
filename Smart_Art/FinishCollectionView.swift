@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 // Custom CollectionView that will be the main component for FinishVC
 class FinishCollectionView: UICollectionView, UICollectionViewDataSource {
@@ -45,15 +46,27 @@ extension FinishCollectionView: UICollectionViewDelegate {
 
 extension FinishCollectionView {
     @objc func learnMoreButtonTapped(sender: UIButton, event: UIEvent) {
+        // Ref to the finishVC
         guard let finishVC = findViewController() as? FinishViewController else { return }
+        // Observe the user touch
         let touch = event.allTouches!.first
+        // Find where did the user touched
         let currentTouchPosition: CGPoint = ((touch?.location(in: self))!)
-        if let indexPath: NSIndexPath = self.indexPathForItem(at: currentTouchPosition)! as NSIndexPath {
-            let cell = cellForItem(at: indexPath as IndexPath) as! FinishCVCell
-            
-            let artist = finishVC.userResult?.correctAnswers![indexPath.row]
-            print(artist)
-        }else {
+        // Get the index of the cell that the user touched
+        if let indexPath = self.indexPathForItem(at: currentTouchPosition) as NSIndexPath? {
+            // Index the correct artist of hte quiz
+            var artist = finishVC.userResult?.correctAnswers![indexPath.row]
+            // Format the artist name into url compatible
+            artist = artist?.replacingOccurrences(of: " ", with: "_")
+            // Checking if the url is valid
+            if let wikiUrl = URL(string: "\(finishVC.url)\(artist!)") {
+                // Instanciate a Safari view controller
+                let safariVC = SFSafariViewController(url: wikiUrl, entersReaderIfAvailable: true)
+                // Assign the safariVC to finishVC
+                safariVC.delegate = finishVC.self
+                // Present the safari view controller
+                finishVC.present(safariVC, animated: true, completion: nil)
+            }} else {
             return
         }
     }
