@@ -13,7 +13,7 @@ class QuizNameLabel: UILabel {
     override init(frame: CGRect) {
         super.init(frame: frame)
         numberOfLines = 3
-        backgroundColor = .green
+        backgroundColor = .white
         text = "QUIZ NAME HERE"
         font = UIFont.systemFont(ofSize: 30)
         textAlignment = .center

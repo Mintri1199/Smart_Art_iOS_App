@@ -46,6 +46,8 @@ class FinishViewController: UIViewController, SFSafariViewControllerDelegate {
         let textAttribute = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20)]
         navigationItem.title =  "Score: \(userResult!.score)"
         navigationController?.navigationBar.titleTextAttributes = textAttribute
+        // Get rid of the back button
+        navigationItem.hidesBackButton = true
         // Show the navBar
         navigationController?.navigationBar.isHidden = false
     }

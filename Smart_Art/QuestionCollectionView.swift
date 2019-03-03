@@ -48,16 +48,16 @@ class QuestionCollectionView: UICollectionView, UICollectionViewDataSource {
 
 extension QuestionCollectionView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        let currentQuestion = mockQuiz.questions[indexPath.row]
-        var currentOptions = currentQuestion.incorrect
-        currentOptions.append(currentQuestion.correct)
+        //let currentQuestion = mockQuiz.questions[indexPath.row]
+        //var currentOptions = currentQuestion.choices
+        //currentOptions.append(currentQuestion.correct)
         // Shuffle the array so the order of the options would be random
-        currentOptions.shuffle()
+        //currentOptions.shuffle()
         if let questionVC = findViewController() as? QuestionViewController {
-            questionVC.housingView.buttonStack.firstButtonRow.leftButton.setTitle(currentOptions[0], for: .normal)
-            questionVC.housingView.buttonStack.firstButtonRow.rightButton.setTitle(currentOptions[1], for: .normal)
-            questionVC.housingView.buttonStack.secondButtonRow.leftButton.setTitle(currentOptions[2], for: .normal)
-            questionVC.housingView.buttonStack.secondButtonRow.rightButton.setTitle(currentOptions[3], for: .normal)
+//            questionVC.housingView.buttonStack.firstButtonRow.leftButton.setTitle(currentOptions[0], for: .normal)
+//            questionVC.housingView.buttonStack.firstButtonRow.rightButton.setTitle(currentOptions[1], for: .normal)
+//            questionVC.housingView.buttonStack.secondButtonRow.leftButton.setTitle(currentOptions[2], for: .normal)
+//            questionVC.housingView.buttonStack.secondButtonRow.rightButton.setTitle(currentOptions[3], for: .normal)
         }
     }
 }

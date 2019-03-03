@@ -9,12 +9,10 @@
 import UIKit
 
 // This is where the user will select the quiz they want to play
-class QuizViewController: UIViewController{
-    
-
+class QuizViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        getQuizzes()
         view.backgroundColor = .mainBackgroundColor
         setupCollectionView()
     }

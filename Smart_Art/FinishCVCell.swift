@@ -25,7 +25,6 @@ class FinishCVCell: UICollectionViewCell {
     var imageView: UIImageView = {
         var view = UIImageView()
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        view.backgroundColor = .cyan
         view.layer.cornerRadius = 30
         view.contentMode = .scaleAspectFit
         view.translatesAutoresizingMaskIntoConstraints = false

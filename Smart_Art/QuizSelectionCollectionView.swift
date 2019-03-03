@@ -42,7 +42,7 @@ class QuizSelectionCollectionView: UICollectionView, UICollectionViewDataSource,
         guard let quizScreen = self.findViewController() as? QuizViewController else { print("ill assign collectionView"); return }
         let questionVC = QuestionViewController()
         questionVC.quizCellIndex = indexPath
-        questionVC.housingView.collectionView.selectedQuiz = mockQuiz
+        //questionVC.housingView.collectionView.selectedQuiz = mockQuiz
         quizScreen.navigationController?.pushViewController(questionVC, animated: true)
     }
 }

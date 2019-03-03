@@ -9,6 +9,19 @@
 import Foundation
 import UIKit
 
+// This function will get us the quizzes for the selection Screen
+func getQuizzes() {
+    let urlString = "https://smart-art-api.herokuapp.com/api/all"
+    let url = URL(string: urlString)
+    let decoder = JSONDecoder()
+    let task = URLSession.shared.dataTask(with: url!) {(data, reponse, error) in
+        guard let dataResponse = data , error == nil else {print(error?.localizedDescription ?? "Response Error"); return}
+        let decoded = try? decoder.decode([Quiz].self, from: dataResponse)
+        print(decoded![0])
+    }
+    task.resume()
+}
+
 // This function allow us to get an image using a url string for the individual question
 func getImage(urlString: String, completion: @escaping (UIImage?) -> Void) {
     // Turn string parameter into url

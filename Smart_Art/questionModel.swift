@@ -14,23 +14,13 @@ struct Question: Codable {
     let image: String
     let question: String
     let correct: String
-    let incorrect: [String]
-    init(image: String, question: String, correct: String, incorrect: [String]) {
-        self.image = image
-        self.question = question
-        self.correct = correct
-        self.incorrect = incorrect
-    }
+    let choices: [String]
 }
 
 // Quiz model
 struct Quiz: Codable {
-    let categories: [String]
+    let title: String
     let questions: [Question]
-    init(categories: [String], questions: [Question]) {
-        self.categories = categories
-        self.questions = questions
-    }
 }
 
 // Finish Quiz Model
