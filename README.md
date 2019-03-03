@@ -30,9 +30,9 @@ My name is Colleen the college student. As a part of my education I have taken a
 ## Contributing
 
 
-Ali Shalabi - Backend Engineer
+Ali Shalabi - Frontend Engineer
 
-Zurich Okoren - Front end Engineer
+Zurich Okoren - Backend Engineer
 
 Jackson Ho - iOS Engineer Lead
 
