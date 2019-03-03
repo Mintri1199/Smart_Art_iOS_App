@@ -28,6 +28,8 @@
 		44201757221B96E000B45F56 /* CellImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44201756221B96E000B45F56 /* CellImageView.swift */; };
 		44201759221B9B0700B45F56 /* QuizNameLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44201758221B9B0700B45F56 /* QuizNameLabel.swift */; };
 		4420175B221B9FDC00B45F56 /* QuizScoreLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4420175A221B9FDC00B45F56 /* QuizScoreLabel.swift */; };
+		44B434C7222B4E27000D72E0 /* OuterLabelStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B434C6222B4E27000D72E0 /* OuterLabelStackView.swift */; };
+		44B434C9222B5C2B000D72E0 /* FindOutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B434C8222B5C2B000D72E0 /* FindOutButton.swift */; };
 		44D9BF0122221C21007969C5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D9BF0022221C21007969C5 /* NetworkManager.swift */; };
 		44D9BF032225F53C007969C5 /* ProgressionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D9BF022225F53C007969C5 /* ProgressionButton.swift */; };
 		44D9BF0522264697007969C5 /* FinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D9BF0422264697007969C5 /* FinishViewController.swift */; };
@@ -36,7 +38,6 @@
 		44D9BF0C22285E45007969C5 /* FinishCVLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D9BF0B22285E45007969C5 /* FinishCVLayout.swift */; };
 		44D9BF0E22285E60007969C5 /* FinishCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D9BF0D22285E60007969C5 /* FinishCVCell.swift */; };
 		44D9BF1022288231007969C5 /* AnswerLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D9BF0F22288231007969C5 /* AnswerLabel.swift */; };
-		44D9BF12222882C8007969C5 /* PlaceholderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D9BF11222882C8007969C5 /* PlaceholderLabel.swift */; };
 		5896C15A5EA66A9675E4D255 /* Pods_Smart_ArtTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 414065CA46D590B14CE78178 /* Pods_Smart_ArtTests.framework */; };
 		6F04E173AF6B2CBF384691BA /* Pods_Smart_Art.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1CA45F83DDB45E1DE6DC9F5 /* Pods_Smart_Art.framework */; };
 		B5DD14ADF28E96BA8173DBBD /* Pods_Smart_ArtUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78288B089F1F90A1147751E5 /* Pods_Smart_ArtUITests.framework */; };
@@ -92,6 +93,8 @@
 		44201756221B96E000B45F56 /* CellImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellImageView.swift; sourceTree = "<group>"; };
 		44201758221B9B0700B45F56 /* QuizNameLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizNameLabel.swift; sourceTree = "<group>"; };
 		4420175A221B9FDC00B45F56 /* QuizScoreLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizScoreLabel.swift; sourceTree = "<group>"; };
+		44B434C6222B4E27000D72E0 /* OuterLabelStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OuterLabelStackView.swift; sourceTree = "<group>"; };
+		44B434C8222B5C2B000D72E0 /* FindOutButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindOutButton.swift; sourceTree = "<group>"; };
 		44D9BF0022221C21007969C5 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		44D9BF022225F53C007969C5 /* ProgressionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressionButton.swift; sourceTree = "<group>"; };
 		44D9BF0422264697007969C5 /* FinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishViewController.swift; sourceTree = "<group>"; };
@@ -100,7 +103,6 @@
 		44D9BF0B22285E45007969C5 /* FinishCVLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishCVLayout.swift; sourceTree = "<group>"; };
 		44D9BF0D22285E60007969C5 /* FinishCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishCVCell.swift; sourceTree = "<group>"; };
 		44D9BF0F22288231007969C5 /* AnswerLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerLabel.swift; sourceTree = "<group>"; };
-		44D9BF11222882C8007969C5 /* PlaceholderLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderLabel.swift; sourceTree = "<group>"; };
 		78288B089F1F90A1147751E5 /* Pods_Smart_ArtUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smart_ArtUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92043F095649075AFDB22B54 /* Pods-Smart_ArtTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Smart_ArtTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Smart_ArtTests/Pods-Smart_ArtTests.release.xcconfig"; sourceTree = "<group>"; };
 		A1CA45F83DDB45E1DE6DC9F5 /* Pods_Smart_Art.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Smart_Art.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -254,7 +256,8 @@
 				44D9BF0D22285E60007969C5 /* FinishCVCell.swift */,
 				44D9BF0B22285E45007969C5 /* FinishCVLayout.swift */,
 				44D9BF0F22288231007969C5 /* AnswerLabel.swift */,
-				44D9BF11222882C8007969C5 /* PlaceholderLabel.swift */,
+				44B434C6222B4E27000D72E0 /* OuterLabelStackView.swift */,
+				44B434C8222B5C2B000D72E0 /* FindOutButton.swift */,
 			);
 			name = FinishScreen;
 			sourceTree = "<group>";
@@ -527,6 +530,7 @@
 			files = (
 				44201759221B9B0700B45F56 /* QuizNameLabel.swift in Sources */,
 				44D9BF0C22285E45007969C5 /* FinishCVLayout.swift in Sources */,
+				44B434C9222B5C2B000D72E0 /* FindOutButton.swift in Sources */,
 				4400BF5D220391480014C62B /* Smart_Art.xcdatamodeld in Sources */,
 				CDA3929322079A6700B6B641 /* fourButtonStackView.swift in Sources */,
 				44D9BF0522264697007969C5 /* FinishViewController.swift in Sources */,
@@ -541,11 +545,11 @@
 				44201753221B88AF00B45F56 /* SelectionLayout.swift in Sources */,
 				44D9BF032225F53C007969C5 /* ProgressionButton.swift in Sources */,
 				4400BF982208168C0014C62B /* QuestionCollectionView.swift in Sources */,
+				44B434C7222B4E27000D72E0 /* OuterLabelStackView.swift in Sources */,
 				44D9BF0122221C21007969C5 /* NetworkManager.swift in Sources */,
 				4400BF57220391480014C62B /* QuestionViewController.swift in Sources */,
 				44201751221B889D00B45F56 /* QuizSelectionCell.swift in Sources */,
 				CDA3929522079D2000B6B641 /* QuestionLabel.swift in Sources */,
-				44D9BF12222882C8007969C5 /* PlaceholderLabel.swift in Sources */,
 				4400BF912208030F0014C62B /* MockData.swift in Sources */,
 				CDA3929722079DA500B6B641 /* AnswerButton.swift in Sources */,
 				4420174B221B7C1D00B45F56 /* ColorExtension.swift in Sources */,

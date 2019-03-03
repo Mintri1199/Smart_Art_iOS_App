@@ -23,10 +23,17 @@ class FinishViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.isHidden = false
+        
         view.backgroundColor = .mainBackgroundColor
         print("Finished quiz")
         setupCollectionView()
         print("The userResult: \(userResult)")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
     }
 
     func passData(result: FinishQuiz) {

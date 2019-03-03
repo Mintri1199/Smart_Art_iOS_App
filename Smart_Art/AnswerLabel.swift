@@ -15,13 +15,14 @@ class AnswerLabel: UILabel {
         super.init(frame: frame)
         translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = .green
+        font = UIFont.systemFont(ofSize: 15)
+        adjustsFontSizeToFitWidth = true
+        minimumScaleFactor = 0.5
+        numberOfLines = 2
         textAlignment = .left
     }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    override func drawText(in rect: CGRect) {
-        let insets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
-        super.drawText(in: rect.inset(by: insets))
-    }
+
 }

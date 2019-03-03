@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window  = UIWindow(frame: UIScreen.main.bounds)
         navigationController = UINavigationController(rootViewController: QuizViewController())
         if let window = window {
-            window.rootViewController = FinishViewController()//navigationController
+            window.rootViewController = navigationController
             window.makeKeyAndVisible()
         }
         return true
