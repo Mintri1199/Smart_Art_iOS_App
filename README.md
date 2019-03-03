@@ -18,7 +18,7 @@ My name is Colleen the college student. As a part of my education I have taken a
 
 ## Wireframes
 <img src="https://imgur.com/pu7nWrG" />
-
+<blockquote class="imgur-embed-pub" lang="en" data-id="pu7nWrG"><a href="//imgur.com/pu7nWrG"></a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
 
 ## Deployment
 
