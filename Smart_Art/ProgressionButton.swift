@@ -45,8 +45,7 @@ class ProgressionButton: UIButton {
         listOfPhotos.append(photo)
         if endOfQuiz {
             print("End of Quiz")
-            finishVC.userAnswer = userAnswers
-            finishVC.userResult = FinishQuiz(photos: listOfPhotos, correctAnswers: getAllCorrectAnswer(), userAnswers: userAnswers)
+            finishVC.userResult = FinishQuiz(photos: listOfPhotos, correctAnswers: getAllCorrectAnswer(), userAnswers: userAnswers, index: questionVC.quizCellIndex!, score: questionVC.score)
             questionVC.navigationController?.pushViewController(finishVC, animated: true)
         } else {
             questionVC.housingView.collectionView.scrollToItem(at: nextItemIndex, at: .left, animated: true)

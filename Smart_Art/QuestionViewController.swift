@@ -12,6 +12,12 @@ class QuestionViewController: UIViewController {
     var score = 0
     var nextItemIndex: IndexPath?
     var endOfQuiz: Bool?
+    var quizCellIndex: IndexPath? {
+        didSet {
+            print(quizCellIndex)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBarController?.tabBar.isHidden = true

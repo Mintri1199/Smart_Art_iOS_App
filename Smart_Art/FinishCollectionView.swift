@@ -31,7 +31,8 @@ class FinishCollectionView: UICollectionView, UICollectionViewDataSource {
         let cell = dequeueReusableCell(withReuseIdentifier: "FinishCell", for: indexPath) as? FinishCVCell
         let correctAnswer = finishVC.userResult?.correctAnswers![indexPath.row]
         let userAnswer = finishVC.userResult?.userAnswers![indexPath.row]
-        
+        let artwork = finishVC.userResult?.photos![indexPath.row]
+        cell?.imageView.image = artwork
         cell?.labelsStack.correctAnswerLabel.text = "Correct: \(correctAnswer!)"
         cell?.labelsStack.userAnswerLabel.text = "You Answered: \(userAnswer!)"
         cell?.learnMoreButton.addTarget(self, action: #selector(learnMoreButtonTapped(sender:event:)), for: .touchUpInside)

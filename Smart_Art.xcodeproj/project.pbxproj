@@ -239,8 +239,8 @@
 		4420174F221B885900B45F56 /* QuizScreen */ = {
 			isa = PBXGroup;
 			children = (
-				44201750221B889D00B45F56 /* QuizSelectionCell.swift */,
 				4420174C221B7F4400B45F56 /* QuizSelectionCollectionView.swift */,
+				44201750221B889D00B45F56 /* QuizSelectionCell.swift */,
 				44201752221B88AF00B45F56 /* SelectionLayout.swift */,
 				44201756221B96E000B45F56 /* CellImageView.swift */,
 				44201758221B9B0700B45F56 /* QuizNameLabel.swift */,

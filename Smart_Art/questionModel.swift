@@ -38,8 +38,12 @@ struct FinishQuiz {
     var photos: [UIImage]?
     var correctAnswers: [String]?
     var userAnswers: [String]?
-    init(photos: [UIImage], correctAnswers: [String], userAnswers: [String]) {
+    var score: Int
+    let quizCellIndex: IndexPath
+    init(photos: [UIImage], correctAnswers: [String], userAnswers: [String], index: IndexPath, score: Int) {
         self.photos = photos
+        self.quizCellIndex = index
+        self.score = score
         self.correctAnswers = correctAnswers
         self.userAnswers = userAnswers
     }
