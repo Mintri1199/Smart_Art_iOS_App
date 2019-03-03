@@ -17,7 +17,7 @@ My name is Colleen the college student. As a part of my education I have taken a
 ## User Interviews
 
 ## Wireframes
-![Imgur](https://imgur.com/pu7nWrG)
+![Imgur](https://i.imgur.com/pu7nWrG.png)
 
 
 ## Deployment
