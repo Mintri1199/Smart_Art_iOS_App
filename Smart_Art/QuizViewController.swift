@@ -12,7 +12,7 @@ import UIKit
 class QuizViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        getQuizzes()
+        //getQuizzes()
         view.backgroundColor = .mainBackgroundColor
         setupCollectionView()
     }

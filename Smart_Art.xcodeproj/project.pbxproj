@@ -30,6 +30,7 @@
 		4420175B221B9FDC00B45F56 /* QuizScoreLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4420175A221B9FDC00B45F56 /* QuizScoreLabel.swift */; };
 		44B434C7222B4E27000D72E0 /* OuterLabelStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B434C6222B4E27000D72E0 /* OuterLabelStackView.swift */; };
 		44B434C9222B5C2B000D72E0 /* FindOutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B434C8222B5C2B000D72E0 /* FindOutButton.swift */; };
+		44B434CF222C9519000D72E0 /* LandingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B434CE222C9519000D72E0 /* LandingVC.swift */; };
 		44D9BF0122221C21007969C5 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D9BF0022221C21007969C5 /* NetworkManager.swift */; };
 		44D9BF032225F53C007969C5 /* ProgressionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D9BF022225F53C007969C5 /* ProgressionButton.swift */; };
 		44D9BF0522264697007969C5 /* FinishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44D9BF0422264697007969C5 /* FinishViewController.swift */; };
@@ -95,6 +96,7 @@
 		4420175A221B9FDC00B45F56 /* QuizScoreLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizScoreLabel.swift; sourceTree = "<group>"; };
 		44B434C6222B4E27000D72E0 /* OuterLabelStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OuterLabelStackView.swift; sourceTree = "<group>"; };
 		44B434C8222B5C2B000D72E0 /* FindOutButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindOutButton.swift; sourceTree = "<group>"; };
+		44B434CE222C9519000D72E0 /* LandingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingVC.swift; sourceTree = "<group>"; };
 		44D9BF0022221C21007969C5 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		44D9BF022225F53C007969C5 /* ProgressionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressionButton.swift; sourceTree = "<group>"; };
 		44D9BF0422264697007969C5 /* FinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishViewController.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				4400BF992208191F0014C62B /* QuizViewController.swift */,
 				4400BF56220391480014C62B /* QuestionViewController.swift */,
 				44D9BF0422264697007969C5 /* FinishViewController.swift */,
+				44B434CE222C9519000D72E0 /* LandingVC.swift */,
 				44201748221B7BA000B45F56 /* MainTabBarController.swift */,
 			);
 			name = controllers;
@@ -558,6 +561,7 @@
 				4400BF952208142A0014C62B /* QuizLayout.swift in Sources */,
 				44D9BF0E22285E60007969C5 /* FinishCVCell.swift in Sources */,
 				44201755221B940B00B45F56 /* HelperExtensions.swift in Sources */,
+				44B434CF222C9519000D72E0 /* LandingVC.swift in Sources */,
 				44D9BF0722264D1D007969C5 /* QuestionGameHousingView.swift in Sources */,
 				CD15695722077C3700BCC130 /* buttonRowStackView.swift in Sources */,
 				44201749221B7BA000B45F56 /* MainTabBarController.swift in Sources */,
