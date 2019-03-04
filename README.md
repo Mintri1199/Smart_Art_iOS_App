@@ -1,5 +1,9 @@
 # Smart_Art_iOS_App
+![Imgur](https://i.imgur.com/VYeYwHO.png)
+
 # Smart Art
+
+
 A web and mobile application that has a database of fine art collections and allows users to test their knowledge through quizzes.
 
 ## Problem
