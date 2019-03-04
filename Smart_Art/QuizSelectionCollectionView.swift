@@ -37,6 +37,11 @@ class QuizSelectionCollectionView: UICollectionView, UICollectionViewDataSource,
         guard let quizzes = quizzes else { print("Can't find quizzes"); return UICollectionViewCell() }
         let quiz = quizzes[indexPath.row]
         cell.quizNameLabel.text = quiz.title
+        getImage(urlString: (quiz.questions.randomElement()?.image)!) { (image) in
+            DispatchQueue.main.async {
+                cell.cellImageView.image = image
+            }
+        }
         // Set the drop shadow for the cell
         cell.layer.shadowColor = UIColor.black.cgColor
         cell.layer.shadowOffset = CGSize(width: 0, height: 2.0)

@@ -10,6 +10,7 @@ import UIKit
 
 // This is where the user will select the quiz they want to play
 class QuizViewController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .mainBackgroundColor
@@ -18,6 +19,7 @@ class QuizViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationItem.hidesBackButton = true
+        self.navigationController?.navigationBar.isHidden = false
         self.navigationController?.navigationBar.barTintColor = .toolBarColor
         //self.tabBarController?.tabBar.isHidden = false
     }
