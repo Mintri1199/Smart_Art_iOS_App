@@ -17,9 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         window  = UIWindow(frame: UIScreen.main.bounds)
-        navigationController = UINavigationController(rootViewController: QuizViewController())
+        navigationController = UINavigationController(rootViewController: LandingVC())
         if let window = window {
-            window.rootViewController = LandingVC() //navigationController
+            window.rootViewController = navigationController
             window.makeKeyAndVisible()
         }
         return true

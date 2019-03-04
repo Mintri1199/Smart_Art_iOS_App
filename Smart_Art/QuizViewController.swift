@@ -12,18 +12,17 @@ import UIKit
 class QuizViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        //getQuizzes()
         view.backgroundColor = .mainBackgroundColor
         setupCollectionView()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        navigationItem.hidesBackButton = true
         self.navigationController?.navigationBar.barTintColor = .toolBarColor
         //self.tabBarController?.tabBar.isHidden = false
     }
-
+    let collectionView = QuizSelectionCollectionView(frame: .zero, collectionViewLayout: SelectionLayout())
     func setupCollectionView() {
-        let collectionView = QuizSelectionCollectionView(frame: .zero, collectionViewLayout: SelectionLayout())
         view.addSubview(collectionView)
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: view.topAnchor),

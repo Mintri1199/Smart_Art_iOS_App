@@ -14,7 +14,14 @@ class LandingVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .toolBarColor
-        getQuizzes()
+        getQuizzes { (quizzes) in
+            DispatchQueue.main.async {
+                let quizVC = QuizViewController()
+                quizVC.collectionView.quizzes = quizzes
+                self.navigationController?.pushViewController(quizVC, animated: true)
+            }
+        }
+        navigationController?.navigationBar.isHidden = true
         setupIcon()
         setupActivityIndicator()
         setupWelcomeLabel()

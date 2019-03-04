@@ -196,10 +196,10 @@
 		4400BF86220393E50014C62B /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				44B434CE222C9519000D72E0 /* LandingVC.swift */,
 				4400BF992208191F0014C62B /* QuizViewController.swift */,
 				4400BF56220391480014C62B /* QuestionViewController.swift */,
 				44D9BF0422264697007969C5 /* FinishViewController.swift */,
-				44B434CE222C9519000D72E0 /* LandingVC.swift */,
 				44201748221B7BA000B45F56 /* MainTabBarController.swift */,
 			);
 			name = controllers;

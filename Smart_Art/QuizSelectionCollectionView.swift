@@ -10,6 +10,13 @@ import UIKit
 
 // Custom collectionView for selection screen
 class QuizSelectionCollectionView: UICollectionView, UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    var quizzes:[Quiz]? {
+        didSet {
+            print("Received Quizzed from api")
+        }
+    }
+    
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
         backgroundColor = .mainBackgroundColor
@@ -22,10 +29,14 @@ class QuizSelectionCollectionView: UICollectionView, UICollectionViewDataSource,
         fatalError("init(coder:) has not been implemented")
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 8
+        guard let quizzes = quizzes else { print("Can't find quizzes"); return 0}
+        return quizzes.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = dequeueReusableCell(withReuseIdentifier: "quizCell", for: indexPath) as? QuizSelectionCell else { return UICollectionViewCell() }
+        guard let quizzes = quizzes else { print("Can't find quizzes"); return UICollectionViewCell() }
+        let quiz = quizzes[indexPath.row]
+        cell.quizNameLabel.text = quiz.title
         // Set the drop shadow for the cell
         cell.layer.shadowColor = UIColor.black.cgColor
         cell.layer.shadowOffset = CGSize(width: 0, height: 2.0)
@@ -40,8 +51,11 @@ class QuizSelectionCollectionView: UICollectionView, UICollectionViewDataSource,
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // Determine the viewController that this collectionView is in
         guard let quizScreen = self.findViewController() as? QuizViewController else { print("ill assign collectionView"); return }
+        guard let quizzes = quizzes else {print("Can't find quizzes in select collectionView"); return }
         let questionVC = QuestionViewController()
+        let selectedQuiz = quizzes[indexPath.row]
         questionVC.quizCellIndex = indexPath
+        questionVC.housingView.collectionView.selectedQuiz = selectedQuiz
         //questionVC.housingView.collectionView.selectedQuiz = mockQuiz
         quizScreen.navigationController?.pushViewController(questionVC, animated: true)
     }

@@ -53,9 +53,9 @@ class FinishViewController: UIViewController, SFSafariViewControllerDelegate {
     }
     // Use Delegation to passed back score later and figure out how to do persistence
     @objc func returnButtonTapped() {
-        navigationController?.popToRootViewController(animated: true)
+        guard let selectionView = navigationController?.viewControllers[1] as? QuizViewController else { print("ill assign view controller order"); return }
+        navigationController?.popToViewController(selectionView, animated: true)
     }
-    
     func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
         dismiss(animated: true, completion: nil)
     }

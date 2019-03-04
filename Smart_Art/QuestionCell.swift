@@ -13,16 +13,16 @@ import NVActivityIndicatorView
 class QuestionCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .green
+        backgroundColor = .mainBackgroundColor
         addSubview(libraryActivityIndicator)
         NSLayoutConstraint.activate([
-            libraryActivityIndicator.topAnchor.constraint(equalTo: topAnchor, constant: 10),
-            libraryActivityIndicator.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            libraryActivityIndicator.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
-            libraryActivityIndicator.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.6)
+            libraryActivityIndicator.centerXAnchor.constraint(equalTo: centerXAnchor),
+            libraryActivityIndicator.centerYAnchor.constraint(equalTo: centerYAnchor),
+            libraryActivityIndicator.heightAnchor.constraint(equalTo: heightAnchor),
+            libraryActivityIndicator.widthAnchor.constraint(equalTo: widthAnchor)
             ])
+        libraryActivityIndicator.startAnimating()
         setupImageView()
-        //setupLabel()
     }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -60,18 +60,29 @@ class QuestionCell: UICollectionViewCell {
         indicator.translatesAutoresizingMaskIntoConstraints = false
         return indicator
     }()
+    // Update the cell when assigning the image
     func updateCell(with image: UIImage?) {
         if let imageToDisplay = image {
-            libraryActivityIndicator.stopAnimating()
             imageView.image = imageToDisplay
-            imageView.layoutIfNeeded()
-            let realImageRect = AVMakeRect(aspectRatio: imageToDisplay.size, insideRect: imageView.frame)
-            let testingView = UIView(frame: realImageRect)
-            testingView.backgroundColor = .red
-            addSubview(testingView)
+            updateImageView(image: imageToDisplay)
         } else {
             imageView.image = nil
-            libraryActivityIndicator.startAnimating()
         }
+    }
+    // Update the image view contraints after the image has been set
+    func updateImageView(image: UIImage) {
+        imageView.layoutIfNeeded()
+        // Getting the rect of image
+        let imageRect = AVMakeRect(aspectRatio: image.size, insideRect: imageView.frame)
+        imageView.removeConstraints(imageView.constraints)
+        imageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        imageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: imageRect.height).isActive = true
+        imageView.widthAnchor.constraint(equalToConstant: imageRect.width).isActive = true
+        imageView.setNeedsLayout()
+        // Add border to represent a frame
+        imageView.layer.borderWidth = 5
+        imageView.layer.borderColor = UIColor.white.cgColor
+        libraryActivityIndicator.stopAnimating()
     }
 }
