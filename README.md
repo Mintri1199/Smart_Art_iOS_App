@@ -1,5 +1,5 @@
 # Smart_Art_iOS_App
-![Imgur|500x500](https://i.imgur.com/VYeYwHO.png)
+![Imgur](https://i.imgur.com/VYeYwHO.png?1)
 
 # Smart Art
 
