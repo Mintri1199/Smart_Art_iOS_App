@@ -26,7 +26,7 @@ class QuizNameLabel: UILabel {
     }
     // Provide padding to the text
     override func drawText(in rect: CGRect) {
-        let insets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        let insets = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
         super.drawText(in: rect.inset(by: insets))
     }
 }

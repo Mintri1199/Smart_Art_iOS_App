@@ -40,8 +40,9 @@ class QuestionGameHousingView: UIView {
         return label
     }()
     var progressionButton = ProgressionButton()
+    // Functions that setup the UI components in the cell
     private func setupButtonStack() {
-    addSubview(buttonStack)
+        addSubview(buttonStack)
         NSLayoutConstraint.activate([
             buttonStack.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.25),
             buttonStack.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -30),

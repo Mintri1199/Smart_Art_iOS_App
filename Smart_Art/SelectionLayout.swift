@@ -11,6 +11,7 @@ import UIKit
 // Custom layout rules for collectionView in selection screen
 class SelectionLayout: UICollectionViewFlowLayout {
     override func prepare() {
+        // TODO: Revised this logic to better fit on other phones
         guard let cv = collectionView else { return }
         self.scrollDirection = .vertical
         self.minimumLineSpacing = 20

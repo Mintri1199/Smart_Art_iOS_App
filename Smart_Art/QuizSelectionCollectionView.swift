@@ -10,13 +10,7 @@ import UIKit
 
 // Custom collectionView for selection screen
 class QuizSelectionCollectionView: UICollectionView, UICollectionViewDataSource, UICollectionViewDelegate {
-    
-    var quizzes:[Quiz]? {
-        didSet {
-            print("Received Quizzed from api")
-        }
-    }
-    
+    var quizzes: [Quiz]?
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
         backgroundColor = .mainBackgroundColor
@@ -54,14 +48,13 @@ class QuizSelectionCollectionView: UICollectionView, UICollectionViewDataSource,
     }
     // func that happen when the user tap on the cell
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // Determine the viewController that this collectionView is in
+        // Find the viewController that this collectionView is in
         guard let quizScreen = self.findViewController() as? QuizViewController else { print("ill assign collectionView"); return }
         guard let quizzes = quizzes else {print("Can't find quizzes in select collectionView"); return }
         let questionVC = QuestionViewController()
         let selectedQuiz = quizzes[indexPath.row]
         questionVC.quizCellIndex = indexPath
         questionVC.housingView.collectionView.selectedQuiz = selectedQuiz
-        //questionVC.housingView.collectionView.selectedQuiz = mockQuiz
         quizScreen.navigationController?.pushViewController(questionVC, animated: true)
     }
 }

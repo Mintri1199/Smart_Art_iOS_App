@@ -80,7 +80,7 @@ class FourButtonStackView: UIStackView {
         }
     }
     // Disable all buttons once one is pressed
-    private func buttonsDisable() {
+    func buttonsDisable() {
         firstButtonRow.leftButton.isEnabled = false
         firstButtonRow.rightButton.isEnabled = false
         secondButtonRow.leftButton.isEnabled = false

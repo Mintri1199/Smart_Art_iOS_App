@@ -46,6 +46,7 @@ extension FinishCollectionView: UICollectionViewDelegate {
 
 extension FinishCollectionView {
     @objc func learnMoreButtonTapped(sender: UIButton, event: UIEvent) {
+        print("Button Tapped")
         // Ref to the finishVC
         guard let finishVC = findViewController() as? FinishViewController else { return }
         // Observe the user touch
@@ -58,6 +59,8 @@ extension FinishCollectionView {
             var artist = finishVC.userResult?.correctAnswers![indexPath.row]
             // Format the artist name into url compatible
             artist = artist?.replacingOccurrences(of: " ", with: "_")
+            artist = artist?.replacingOccurrences(of: "-", with: "_")
+            print(artist)
             // Checking if the url is valid
             if let wikiUrl = URL(string: "\(finishVC.url)\(artist!)") {
                 // Instanciate a Safari view controller

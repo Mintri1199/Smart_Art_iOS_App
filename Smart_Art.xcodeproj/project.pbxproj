@@ -97,6 +97,7 @@
 		44B434C6222B4E27000D72E0 /* OuterLabelStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OuterLabelStackView.swift; sourceTree = "<group>"; };
 		44B434C8222B5C2B000D72E0 /* FindOutButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindOutButton.swift; sourceTree = "<group>"; };
 		44B434CE222C9519000D72E0 /* LandingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingVC.swift; sourceTree = "<group>"; };
+		44B434D2222E1683000D72E0 /* Smart_Art.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Smart_Art.entitlements; sourceTree = "<group>"; };
 		44D9BF0022221C21007969C5 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		44D9BF022225F53C007969C5 /* ProgressionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressionButton.swift; sourceTree = "<group>"; };
 		44D9BF0422264697007969C5 /* FinishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishViewController.swift; sourceTree = "<group>"; };
@@ -168,6 +169,7 @@
 		4400BF53220391480014C62B /* Smart_Art */ = {
 			isa = PBXGroup;
 			children = (
+				44B434D2222E1683000D72E0 /* Smart_Art.entitlements */,
 				4400BF85220393DB0014C62B /* model */,
 				4400BF86220393E50014C62B /* controllers */,
 				4400BF87220393EE0014C62B /* views */,
@@ -361,6 +363,17 @@
 				TargetAttributes = {
 					4400BF50220391480014C62B = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.AccessWiFi = {
+								enabled = 1;
+							};
+							com.apple.ApplePay = {
+								enabled = 0;
+							};
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 					4400BF672203914A0014C62B = {
 						CreatedOnToolsVersion = 10.1;
@@ -730,6 +743,7 @@
 			baseConfigurationReference = 0E3297B2E531E3CE6966655E /* Pods-Smart_Art.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Smart_Art/Smart_Art.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XYLZ368J9Q;
 				INFOPLIST_FILE = Smart_Art/Info.plist;
@@ -749,6 +763,7 @@
 			baseConfigurationReference = E37DF029F6B6B2969DAC82CD /* Pods-Smart_Art.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Smart_Art/Smart_Art.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XYLZ368J9Q;
 				INFOPLIST_FILE = Smart_Art/Info.plist;

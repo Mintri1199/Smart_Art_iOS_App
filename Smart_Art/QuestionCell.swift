@@ -62,15 +62,20 @@ class QuestionCell: UICollectionViewCell {
     }()
     // Update the cell when assigning the image
     func updateCell(with image: UIImage?) {
+        guard let questionVC = findViewController() as? QuestionViewController else { return }
         if let imageToDisplay = image {
             imageView.image = imageToDisplay
             updateImageView(image: imageToDisplay)
+            // Re enable the buttons after the image done loading
+            questionVC.housingView.buttonStack.reEnableButton()
         } else {
+            // Prevent the user from choosing an answer if the image has not loaded
+            questionVC.housingView.buttonStack.buttonsDisable()
             imageView.image = nil
         }
     }
     // Update the image view contraints after the image has been set
-    func updateImageView(image: UIImage) {
+    private func updateImageView(image: UIImage) {
         imageView.layoutIfNeeded()
         // Getting the rect of image
         let imageRect = AVMakeRect(aspectRatio: image.size, insideRect: imageView.frame)

@@ -16,7 +16,6 @@ class QuizSelectionCell: UICollectionViewCell {
         layer.cornerRadius = 30
         setupImageView()
         setupQuizNameLabel()
-        //setupQuizScoreLabel()
     }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -44,6 +43,7 @@ class QuizSelectionCell: UICollectionViewCell {
             quizNameLabel.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.2)
             ])
     }
+    // Not currently use
     func setupQuizScoreLabel() {
         addSubview(quizScoreLabel)
         NSLayoutConstraint.activate([
