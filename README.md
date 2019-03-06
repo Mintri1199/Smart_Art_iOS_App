@@ -18,7 +18,9 @@ My name is Arnold the art lover. Over the past few years, I have been increasing
 My name is Colleen the college student. As a part of my education I have taken an art appreciation class - with an emphasis on the classics.
 
 
-## User Interviews
+## Web Frontend
+![Imgur](https://imgur.com/a/HSPSCwD)
+![Imgur](https://imgur.com/QWDOMRG)
 
 ## Wireframes
 ![Imgur](https://i.imgur.com/pu7nWrG.png)
