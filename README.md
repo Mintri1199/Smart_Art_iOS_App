@@ -1,4 +1,3 @@
-# Smart_Art_iOS_App
 ![Imgur](https://i.imgur.com/VYeYwHO.png?3)
 
 # Smart Art
@@ -12,12 +11,6 @@ There is a gap in experience and enjoyment with art. Art books are also expensiv
 ## Solution
 Smart art provides an interactive experience that allows users to play a fun quiz game to learn more about art.
 
-## User Narratives
-My name is Arnold the art lover. Over the past few years, I have been increasing my appreciation for art by reading art books and visiting as many museums as a I can. The more I appreciate art, the moved I become by masterpieces.
-
-My name is Colleen the college student. As a part of my education I have taken an art appreciation class - with an emphasis on the classics.
-
-
 ## Web Frontend
 ![Imgur](https://i.imgur.com/BMoC5uq.jpg?1)
 ![Imgur](https://i.imgur.com/sRMxM24.png?1)
@@ -28,9 +21,9 @@ My name is Colleen the college student. As a part of my education I have taken a
 
 ## Deployment
 
-https://testflight.apple.com/join/Uzq1krYz
+[Test Flight Link](https://testflight.apple.com/join/Uzq1krYz)
 
-## Technlogies
+## Technologies
  - Swift
  - Node.js
 
