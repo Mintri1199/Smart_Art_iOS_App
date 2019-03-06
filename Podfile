@@ -6,7 +6,8 @@ target 'Smart_Art' do
   use_frameworks!
 
   # Pods for Smart_Art
-	pod 'NVActivityIndicatorView'
+  pod 'NVActivityIndicatorView'
+  pod 'SwiftLint'
   target 'Smart_ArtTests' do
     inherit! :search_paths
     # Pods for testing

@@ -8,11 +8,9 @@
 
 import UIKit
 
-class QuestionCollectionView: UICollectionView, UICollectionViewDataSource{
-    // SelectedQuiz
+class QuestionCollectionView: UICollectionView, UICollectionViewDataSource {
+    
     var selectedQuiz: Quiz?
-    
-    
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
         translatesAutoresizingMaskIntoConstraints = false
@@ -25,22 +23,17 @@ class QuestionCollectionView: UICollectionView, UICollectionViewDataSource{
         dataSource = self
         register(QuestionCell.self, forCellWithReuseIdentifier: "QuizCell")
     }
-    
-    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         guard let quiz = selectedQuiz else { print("Can't find selected quiz"); return 0}
         return quiz.questions.count
     }
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let quiz = selectedQuiz else { print("Can't find selected quiz"); return UICollectionViewCell()}
         let question = quiz.questions[indexPath.row]
-        
-        let cell = dequeueReusableCell(withReuseIdentifier: "QuizCell", for: indexPath) as! QuestionCell
+        guard let cell = dequeueReusableCell(withReuseIdentifier: "QuizCell", for: indexPath) as? QuestionCell else {return UICollectionViewCell()}
         //cell.quizLabel.text = question.question
         getImage(urlString: question.image) { (image) in
             if let image = image {
@@ -54,14 +47,13 @@ class QuestionCollectionView: UICollectionView, UICollectionViewDataSource{
 }
 
 extension QuestionCollectionView: UICollectionViewDelegate {
-    
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        let currentQuestion = mockQuiz.questions[indexPath.row]
-        var currentOptions = currentQuestion.incorrect
+        guard let selectedQuiz = selectedQuiz else { print("Can't find selected quiz in button"); return}
+        let currentQuestion = selectedQuiz.questions[indexPath.row]
+        var currentOptions = currentQuestion.choices
         currentOptions.append(currentQuestion.correct)
         // Shuffle the array so the order of the options would be random
         currentOptions.shuffle()
-        
         if let questionVC = findViewController() as? QuestionViewController {
             questionVC.housingView.buttonStack.firstButtonRow.leftButton.setTitle(currentOptions[0], for: .normal)
             questionVC.housingView.buttonStack.firstButtonRow.rightButton.setTitle(currentOptions[1], for: .normal)

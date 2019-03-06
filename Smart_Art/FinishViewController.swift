@@ -7,47 +7,56 @@
 //
 
 import UIKit
-
+import SafariServices
 
 // This screen will show when the user is finish with the quiz
-class FinishViewController: UIViewController {
-    
+class FinishViewController: UIViewController, SFSafariViewControllerDelegate {
+    let url = "https://en.wikipedia.org/wiki/"
     var userResult: FinishQuiz? {
         didSet {
-            print(userResult)
-            self.cv.reloadData()
+            self.collectionView.reloadData()
         }
     }
-    
-    var userAnswer: [String]?{
-        didSet {
-            print("Passed user's answer: \(userAnswer)")
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        configNavbar()
         view.backgroundColor = .mainBackgroundColor
         print("Finished quiz")
-        
         setupCollectionView()
-        print("The userResult: \(userResult)")
     }
-
-    func passData(result: FinishQuiz) {
-        userResult = result
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
     }
-    
-    var cv = FinishCollectionView(frame: .zero, collectionViewLayout: FinishCVLayout())
-    
+    var collectionView = FinishCollectionView(frame: .zero, collectionViewLayout: FinishCVLayout())
     func setupCollectionView() {
-        view.addSubview(cv)
-        
+        view.addSubview(collectionView)
         NSLayoutConstraint.activate([
-            cv.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
-            cv.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
-            cv.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
-            cv.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
-            ])        
+            collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0),
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0)
+            ])
+    }
+    private func configNavbar() {
+        // Create a return button
+        let returnButton = UIBarButtonItem(title: "RETURN", style: .done, target: self, action: #selector(returnButtonTapped))
+        returnButton.tintColor = .white
+        navigationItem.rightBarButtonItem = returnButton
+        // Config the title of the NavBar
+        let textAttribute = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20)]
+        navigationItem.title =  "Score: \(userResult!.score)"
+        navigationController?.navigationBar.titleTextAttributes = textAttribute
+        // Get rid of the back button
+        navigationItem.hidesBackButton = true
+        // Show the navBar
+        navigationController?.navigationBar.isHidden = false
+    }
+    // Use Delegation to passed back score later and figure out how to do persistence
+    @objc func returnButtonTapped() {
+        guard let selectionView = navigationController?.viewControllers[1] as? QuizViewController else { print("ill assign view controller order"); return }
+        navigationController?.popToViewController(selectionView, animated: true)
+    }
+    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
+        dismiss(animated: true, completion: nil)
     }
 }

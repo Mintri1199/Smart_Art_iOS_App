@@ -13,20 +13,12 @@ class MainTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         //tabBar.barTintColor = .tabBarColor
         //setupTabBar()
     }
-    
-    
-    func setupTabBar(){
+    func setupTabBar() {
         let quizController = UINavigationController(rootViewController: QuizViewController())
-        
         quizController.tabBarItem.title = "Quiz"
-        
         viewControllers = [quizController]
     }
-    
-    
-    
 }

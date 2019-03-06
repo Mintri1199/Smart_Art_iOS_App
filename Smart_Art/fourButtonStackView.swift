@@ -9,8 +9,7 @@
 import UIKit
 
 // Outer stackView of the four buttons
-class fourButtonStackView: UIStackView {
-    
+class FourButtonStackView: UIStackView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         axis = .vertical
@@ -27,35 +26,28 @@ class fourButtonStackView: UIStackView {
         secondButtonRow.rightButton.addTarget(self, action: #selector(answerButtonPressRevised(_:)), for: .touchUpInside)
         // Provide padding for spin animation since I can't use safeAreaLayoutGuide
         directionalLayoutMargins = NSDirectionalEdgeInsets(top: 18, leading: 0, bottom: 34, trailing: 0)
-        
     }
-    
     required init(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    var firstButtonRow = buttonRowStackView()
-    var secondButtonRow = buttonRowStackView()
-    
-    
+    var firstButtonRow = ButtonRowStackView()
+    var secondButtonRow = ButtonRowStackView()
     @objc func answerButtonPressRevised(_ sender: AnswerButton) {
         var endOfQuiz = false
-        
         if let questionVC = findViewController() as? QuestionViewController {
             // Get the index of the current question cell
-            let cellIndexPathArray = questionVC.housingView.cv.indexPathsForVisibleItems
+            let cellIndexPathArray = questionVC.housingView.collectionView.indexPathsForVisibleItems
             // Map it into just the index path and not an array
             guard let cellIndex = cellIndexPathArray.first.map({IndexPath(item: $0.row, section: $0.section)}) else { return }
             print("The current cell index: \(cellIndex)")
-            let cell = questionVC.housingView.cv.cellForItem(at: cellIndex) as? QuestionCell
+            let cell = questionVC.housingView.collectionView.cellForItem(at: cellIndex) as? QuestionCell
             // Selected quiz
-            let quiz = questionVC.housingView.cv.selectedQuiz!
+            let quiz = questionVC.housingView.collectionView.selectedQuiz!
             // Map the current cell index into the next
             let nextItemIndex =  IndexPath(row: cellIndex[1] + 1, section: 0)
             print("The next cell index: \(nextItemIndex)")
             // Check if the cell is the last cell in the collectionView
-            
-            if nextItemIndex[1] == quiz.questions.count{
+            if nextItemIndex[1] == quiz.questions.count {
                 questionVC.housingView.progressionButton.setTitle("Done", for: .normal)
                 endOfQuiz = true
             }
@@ -66,7 +58,6 @@ class fourButtonStackView: UIStackView {
             let chosenAnswer = sender.titleLabel?.text
             questionVC.housingView.progressionButton.questionPhoto = cell?.imageView.image!
             questionVC.housingView.progressionButton.answerChosen = chosenAnswer!
-            
             if sender.titleLabel?.text == answer {
                 sender.rightAnswer()
                 sender.rotate360Degrees()
@@ -78,7 +69,7 @@ class fourButtonStackView: UIStackView {
                 buttonsDisable()
                 print("Correct Answer pressed")
             } else {
-                sender.backgroundColor = .red                
+                sender.backgroundColor = .red
                 sender.shake()
                 buttonsDisable()
                 questionVC.housingView.progressionButton.isHidden = false
@@ -88,17 +79,15 @@ class fourButtonStackView: UIStackView {
             }
         }
     }
-    
     // Disable all buttons once one is pressed
-    private func buttonsDisable() {
+    func buttonsDisable() {
         firstButtonRow.leftButton.isEnabled = false
         firstButtonRow.rightButton.isEnabled = false
         secondButtonRow.leftButton.isEnabled = false
         secondButtonRow.rightButton.isEnabled = false
     }
-    
     // Re enable buttons after the cell moved
-    func reEnableButton(){
+    func reEnableButton() {
         firstButtonRow.leftButton.isEnabled = true
         firstButtonRow.rightButton.isEnabled = true
         secondButtonRow.leftButton.isEnabled = true

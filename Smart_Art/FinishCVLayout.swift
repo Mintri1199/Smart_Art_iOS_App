@@ -11,11 +11,11 @@ import UIKit
 // Custom layout for Finish CollectionView
 class FinishCVLayout: UICollectionViewFlowLayout {
     override func prepare() {
-        guard let cv = collectionView else { return }
+        guard let collectionView = collectionView else { return }
         self.scrollDirection = .vertical
         self.minimumLineSpacing = 20
         // Setting the size of the cell
-        self.itemSize = CGSize(width: cv.bounds.width - 50, height: cv.bounds.height/3)
+        self.itemSize = CGSize(width: collectionView.bounds.width - 50, height: collectionView.bounds.height/2.5)
         // Setting the insets of the collection view
         self.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
 

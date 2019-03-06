@@ -11,26 +11,22 @@ import AVFoundation
 import NVActivityIndicatorView
 
 class QuestionCell: UICollectionViewCell {
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .green
-        addSubview(AI)
+        backgroundColor = .mainBackgroundColor
+        addSubview(libraryActivityIndicator)
         NSLayoutConstraint.activate([
-            AI.topAnchor.constraint(equalTo: topAnchor, constant: 10),
-            AI.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            AI.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
-            AI.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.6)
+            libraryActivityIndicator.centerXAnchor.constraint(equalTo: centerXAnchor),
+            libraryActivityIndicator.centerYAnchor.constraint(equalTo: centerYAnchor),
+            libraryActivityIndicator.heightAnchor.constraint(equalTo: heightAnchor),
+            libraryActivityIndicator.widthAnchor.constraint(equalTo: widthAnchor)
             ])
+        libraryActivityIndicator.startAnimating()
         setupImageView()
-        //setupLabel()
     }
-    
-    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     var imageView: UIImageView = {
         var view = UIImageView()
         view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -39,12 +35,9 @@ class QuestionCell: UICollectionViewCell {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-    
     var quizLabel = QuestionLabel(frame: .zero)
-    
     private func setupImageView() {
         addSubview(imageView)
-        
         NSLayoutConstraint.activate([
             imageView.centerYAnchor.constraint(equalTo: centerYAnchor),
             imageView.centerXAnchor.constraint(equalTo: centerXAnchor),
@@ -52,11 +45,9 @@ class QuestionCell: UICollectionViewCell {
             imageView.widthAnchor.constraint(lessThanOrEqualTo: widthAnchor, multiplier: 1, constant: -30)
             ])
     }
-    
     // Curently disable
     private func setupLabel() {
         addSubview(quizLabel)
-        
         NSLayoutConstraint.activate([
             quizLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
             quizLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 20),
@@ -64,28 +55,39 @@ class QuestionCell: UICollectionViewCell {
             quizLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10)
             ])
     }
-    
-    var AI: NVActivityIndicatorView = {
-        var ai = NVActivityIndicatorView(frame: .zero, type: .orbit, color: .white, padding: 50)
-        ai.translatesAutoresizingMaskIntoConstraints = false
-        return ai
+    var libraryActivityIndicator: NVActivityIndicatorView = {
+        var indicator = NVActivityIndicatorView(frame: .zero, type: .orbit, color: .white, padding: 50)
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        return indicator
     }()
-    
-    
+    // Update the cell when assigning the image
     func updateCell(with image: UIImage?) {
+        guard let questionVC = findViewController() as? QuestionViewController else { return }
         if let imageToDisplay = image {
-            AI.stopAnimating()
             imageView.image = imageToDisplay
-            imageView.layoutIfNeeded()
-            let realImageRect = AVMakeRect(aspectRatio: imageToDisplay.size, insideRect: imageView.frame)
-            var testingView = UIView(frame: realImageRect)
-            testingView.backgroundColor = .red
-            addSubview(testingView)
-            
-            
+            updateImageView(image: imageToDisplay)
+            // Re enable the buttons after the image done loading
+            questionVC.housingView.buttonStack.reEnableButton()
         } else {
+            // Prevent the user from choosing an answer if the image has not loaded
+            questionVC.housingView.buttonStack.buttonsDisable()
             imageView.image = nil
-            AI.startAnimating()
         }
+    }
+    // Update the image view contraints after the image has been set
+    private func updateImageView(image: UIImage) {
+        imageView.layoutIfNeeded()
+        // Getting the rect of image
+        let imageRect = AVMakeRect(aspectRatio: image.size, insideRect: imageView.frame)
+        imageView.removeConstraints(imageView.constraints)
+        imageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        imageView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        imageView.heightAnchor.constraint(equalToConstant: imageRect.height).isActive = true
+        imageView.widthAnchor.constraint(equalToConstant: imageRect.width).isActive = true
+        imageView.setNeedsLayout()
+        // Add border to represent a frame
+        imageView.layer.borderWidth = 5
+        imageView.layer.borderColor = UIColor.white.cgColor
+        libraryActivityIndicator.stopAnimating()
     }
 }

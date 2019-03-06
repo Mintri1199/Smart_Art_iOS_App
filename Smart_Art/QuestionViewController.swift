@@ -12,6 +12,11 @@ class QuestionViewController: UIViewController {
     var score = 0
     var nextItemIndex: IndexPath?
     var endOfQuiz: Bool?
+    var quizCellIndex: IndexPath? {
+        didSet {
+            print(quizCellIndex)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,26 +24,20 @@ class QuestionViewController: UIViewController {
         view.backgroundColor = .mainBackgroundColor
         setupHousingView()
     }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
         housingView.scoreLabel.text = "Score: \(score)"
     }
-    
     // This custom view house all the components for this View Controller
     let housingView = QuestionGameHousingView()
-    
     private func setupHousingView() {
         view.addSubview(housingView)
         NSLayoutConstraint.activate([
             housingView.topAnchor.constraint(equalTo: view.topAnchor),
             housingView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             housingView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            housingView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            housingView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
             ])
     }
-    
 }
-
-
