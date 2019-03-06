@@ -19,8 +19,8 @@ My name is Colleen the college student. As a part of my education I have taken a
 
 
 ## Web Frontend
-![Imgur](https://imgur.com/a/HSPSCwD)
-![Imgur](https://imgur.com/QWDOMRG)
+![Imgur](https://i.imgur.com/BMoC5uq.jpg?1)
+![Imgur](https://i.imgur.com/sRMxM24.png?1)
 
 ## Wireframes
 ![Imgur](https://i.imgur.com/pu7nWrG.png)
