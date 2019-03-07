@@ -17,11 +17,6 @@ Smart art provides an interactive experience that allows users to play a fun qui
 
 ## Installation
 
-```
-Using CocoaPods:
-```
-## Installation
-
 ### Cocoapods
 
 Install [Cocoapods](https://cocoapods.org/#install)
