@@ -20,17 +20,13 @@ Smart art provides an interactive experience that allows users to play a fun qui
 ```
 Using CocoaPods:
 ```
-Add the following line to your Podfile:
+## Installation
 
-pod 'NVActivityIndicatorView'
+### Cocoapods
 
-pod 'SwiftLint'
+Install [Cocoapods](https://cocoapods.org/#install)
 
-This will download the SwiftLint and NVActivityIndicatorView binaries and dependencies in Pods/ during your next pod install execution and will allow you to invoke it via ${PODS_ROOT}/SwiftLint/swiftlint and ${PODS_ROOT}/NVActivityIndicatorView/nvaactivityindicatorview in your Script Build Phases.
-
-This is the recommended way to install a specific version of SwiftLint or NVActivityIndicatorView since it supports installing a pinned version rather than simply the latest.
-
-Note that this will add the SwiftLint and NVActivityIndicatorView binaries, its dependencies' binaries and the Swift binary library distribution to the Pods/ directory.
+Then type 'pod update'
 
 
 ## Deployment
