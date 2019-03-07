@@ -23,7 +23,9 @@ Using CocoaPods:
 Add the following line to your Podfile:
 
 pod 'NVActivityIndicatorView'
+
 pod 'SwiftLint'
+
 This will download the SwiftLint and NVActivityIndicatorView binaries and dependencies in Pods/ during your next pod install execution and will allow you to invoke it via ${PODS_ROOT}/SwiftLint/swiftlint and ${PODS_ROOT}/NVActivityIndicatorView/nvaactivityindicatorview in your Script Build Phases.
 
 This is the recommended way to install a specific version of SwiftLint or NVActivityIndicatorView since it supports installing a pinned version rather than simply the latest.
