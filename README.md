@@ -11,12 +11,24 @@ There is a gap in experience and enjoyment with art. Art books are also expensiv
 ## Solution
 Smart art provides an interactive experience that allows users to play a fun quiz game to learn more about art.
 
-## Web Frontend
-![Imgur](https://i.imgur.com/BMoC5uq.jpg?1)
-![Imgur](https://i.imgur.com/sRMxM24.png?1)
+## Demo
 
-## Wireframes
-![Imgur](https://i.imgur.com/pu7nWrG.png)
+![alt tag](https://github.com/Mintri1199/Smart_Art_iOS_App/blob/master/progress_screenshots/demo_v1.2.gif)
+
+## Installation
+
+```
+Using CocoaPods:
+```
+Add the following line to your Podfile:
+
+pod 'NVActivityIndicatorView'
+pod 'SwiftLint'
+This will download the SwiftLint and NVActivityIndicatorView binaries and dependencies in Pods/ during your next pod install execution and will allow you to invoke it via ${PODS_ROOT}/SwiftLint/swiftlint and ${PODS_ROOT}/NVActivityIndicatorView/nvaactivityindicatorview in your Script Build Phases.
+
+This is the recommended way to install a specific version of SwiftLint or NVActivityIndicatorView since it supports installing a pinned version rather than simply the latest.
+
+Note that this will add the SwiftLint and NVActivityIndicatorView binaries, its dependencies' binaries and the Swift binary library distribution to the Pods/ directory.
 
 
 ## Deployment
